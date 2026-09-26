@@ -1,0 +1,132 @@
+Higgsfield Cinema Studio 4.0 — PADELTECH hero (5 clips)
+========================================================
+Settings for EVERY clip (do not change between cities):
+  Model:   Cinema Studio 4.0
+  Format:  1080p · 16:9 · 5 seconds
+  Sound:   Off
+  Count:   1/4 is enough; pick the most photoreal take
+
+How to generate:
+  1. Mode: Video (empty). Do NOT attach the old single-court stills —
+     they fight this aerial brief.
+  2. Paste ONLY the English prompt of that city (the block between ---).
+  3. Export MP4. No titles, logos, subtitles, or watermarks.
+  4. Name the files exactly as below, then connect the folder.
+
+File names I will look for:
+  01-miami.mp4
+  02-nyc.mp4
+  03-madrid.mp4
+  04-london.mp4
+  05-barcelona.mp4
+
+Shared shot (all 5):
+  Slow circular drone orbit around a full luxury padel club,
+  city held in the background, gentle zoom toward one glass court.
+  4–8 padel courts, EVERY court occupied (mixed doubles).
+  Clubhouse + service areas visible, not courts alone.
+  Dusk or early morning only.
+
+
+========================================================
+01 — MIAMI  →  01-miami.mp4
+Compound: waterfront resort club · 6 courts · early morning
+========================================================
+
+---
+Photoreal live-action aerial cinema, 5 seconds, 16:9, 24fps. A luxurious waterfront padel and wellness club in Miami at early morning, just after sunrise.
+
+CAMERA: slow circular drone orbit around the entire compound, clockwise, 20–30 meters up, 24mm. During the orbit the lens gently zooms in toward the nearest glass padel court, while the Miami skyline stays readable in the background the whole time. Smooth cinematic drone, no fisheye, no crash zoom, no jitter.
+
+COMPOUND: six outdoor glass padel courts in two rows of three, every court fully occupied with mixed doubles (men and women rallying). Between the courts: wide teak terraces, a long open-air lounge with sofas and morning coffee service, a small wellness pavilion with outdoor showers and daybeds, a reception pergola, towel stacks, and a shallow reflection pool. Palms and landscaping. This is a full club, not a lone cage.
+
+COURTS: true padel — enclosed glass walls, metal frames, blue surfaces, low dense padel nets, perforated carbon padel rackets with holes (teardrop, NOT tennis, NOT pickleball), yellow padel balls in play on every court.
+
+BACKGROUND: Miami skyline across Biscayne Bay held behind the courts — towers, water, palms. Soft peach and gold sunrise, long shadows, light sea mist. Real sunlight, no CGI, no HDR bloom.
+
+LOOK: photoreal luxury-travel aerial, Kodak 250D, fine grain, real skin and fabric. No logos, no brand names, no text, no captions, no watermarks, no empty courts, no tennis.
+---
+
+
+========================================================
+02 — NEW YORK  →  02-nyc.mp4
+Compound: Manhattan rooftop club · 4 courts · dusk
+========================================================
+
+---
+Photoreal live-action aerial cinema, 5 seconds, 16:9, 24fps. A luxurious multi-level rooftop padel club in Manhattan at dusk, city lights just coming on.
+
+CAMERA: slow circular drone orbit around the rooftop compound, counterclockwise, slightly above the roof edge, 28mm. While circling, a gentle continuous zoom toward one lit glass court in the foreground. The New York skyline stays behind the club for the full 5 seconds. Smooth, expensive drone, no whip, no fisheye.
+
+COMPOUND: four glass padel courts on a large rooftop deck, every court full — mixed doubles in play under LED court lights. Service areas wrapping the courts: glass clubhouse with a lounge bar and dining tables, locker-room entrance, wellness suite with glass facade, outdoor seating, heaters, and a small arrival lobby. This reads as a private city club, not a single cage on a roof.
+
+COURTS: padel only — glass walls, blue courts, low padel nets, perforated padel rackets with visible holes, yellow balls. All four courts occupied.
+
+BACKGROUND: unmistakable Midtown New York at blue hour — Empire State Building and towers, navy sky, warm windows. Skyline always in frame behind the compound. Slight haze, no fireworks, no CGI skyline.
+
+LOOK: photoreal dusk aerial, tungsten mixed with blue hour, fine grain. No logos, no neon brand signs, no text, no watermarks, no empty courts, no tennis.
+---
+
+
+========================================================
+03 — MADRID  →  03-madrid.mp4
+Compound: hillside country club · 8 courts · late-day dusk
+========================================================
+
+---
+Photoreal live-action aerial cinema, 5 seconds, 16:9, 24fps. A grand hillside padel country club on the edge of Madrid at late-day dusk, golden then amber light.
+
+CAMERA: slow circular drone orbit around the whole estate, clockwise, 35 meters up, 24mm. Gradual zoom toward the central glass court as the drone circles. Madrid rooftops and the city held in the far background throughout. Smooth orbit, no drone wobble, no fisheye.
+
+COMPOUND: eight outdoor padel courts in a generous grid (two banks of four), every court fully occupied with mixed doubles. A stone-and-terracotta clubhouse with a restaurant terrace, outdoor bar, shaded lounge, changing pavilion, wellness rooms opening to a courtyard, and a tree-lined arrival drive. Cypress and olive trees. Service staff and members visible on the terraces. A full club campus, impressive and landscaped.
+
+COURTS: classic European padel cages — glass and metal, blue surfaces, low padel nets, perforated padel rackets, yellow balls in play on all eight courts.
+
+BACKGROUND: Madrid city and warm-toned rooftops on the horizon behind the estate, sun low, long shadows, no readable flags or lettering.
+
+LOOK: photoreal European aerial documentary, warm dusk, fine grain, real materials. No logos, no text, no watermarks, no empty courts, no tennis, no CGI.
+---
+
+
+========================================================
+04 — LONDON  →  04-london.mp4
+Compound: brick warehouse conversion · 5 courts · blue-hour dusk
+========================================================
+
+---
+Photoreal live-action aerial cinema, 5 seconds, 16:9, 24fps. A refined brick-warehouse padel club in London at blue-hour dusk, court lights on, rain-damp roofs.
+
+CAMERA: slow circular drone orbit around the converted warehouse compound, counterclockwise, just above the brick chimneys, 28mm. Gentle zoom toward the most visible glass court while London’s city glow stays in the background. Smooth cinematic drone, wet reflections, no fisheye, no crash zoom.
+
+COMPOUND: five padel courts — three in a glass-roofed courtyard, two on an upper terrace — every court full with mixed doubles. The old brick mill houses the club: ground-floor cafe and members’ lounge with large windows, reception, locker rooms, a small spa, and an upstairs viewing gallery. Warm interior light spills onto wet cobbles. Members on the terrace. A complete urban club, not courts in a car park.
+
+COURTS: padel — glass walls, blue courts, low nets, perforated padel rackets with holes, yellow balls. All five occupied. Cool-lime court lighting only, no logos on the lights.
+
+BACKGROUND: London dusk skyline behind the brick — river haze, distant dome and towers, no postcard montage, no giant Union Jack. Overcast blue hour.
+
+LOOK: photoreal British night aerial, cool shadows, warm interiors, fine grain. No logos, no text, no watermarks, no empty courts, no tennis, no CGI.
+---
+
+
+========================================================
+05 — BARCELONA  →  05-barcelona.mp4
+Compound: seaside club campus · 7 courts · early morning
+========================================================
+
+---
+Photoreal live-action aerial cinema, 5 seconds, 16:9, 24fps. A premium seaside padel club campus in Barcelona at early morning, pale Mediterranean light, sea still.
+
+CAMERA: slow circular drone orbit around the waterfront campus, clockwise, 25–30 meters up, 24mm. Continuous gentle zoom toward one glass court by the water, while the Barcelona city and hills stay in the background. Smooth luxury-drone move, no fisheye, no snap zoom.
+
+COMPOUND: seven outdoor glass padel courts in a slightly staggered waterfront line, every court fully occupied with mixed doubles. A pale-stone clubhouse with a breakfast terrace facing the sea, juice and coffee bar, locker and shower pavilion, wellness suite, shaded lounge daybeds, and a landscaped arrival courtyard. Staff setting tables. This is a full morning club, impressive and lived-in.
+
+COURTS: padel only — glass cages, blue surfaces, low padel nets, perforated carbon padel rackets, yellow balls in play on all seven courts.
+
+BACKGROUND: Barcelona waterfront and city grid behind the club — Mediterranean, pale architecture, distant hills / soft church spires only as far unreadable architecture. Soft gold morning, not midday harsh sun.
+
+LOOK: photoreal European coastal aerial, clean morning light, fine grain, real skin. No logos, no text, no watermarks, no empty courts, no soccer, no tennis, no CGI.
+---
+
+
+SHARED NEGATIVE (if the UI has a negative / avoid box, paste this in all 5):
+tennis racket, tennis court, pickleball, empty court, single court only, logos, brand names, letters, captions, subtitles, watermark, CGI, 3D render, plastic skin, extra fingers, morphing faces, fisheye, crash zoom, shaky phone video, midday harsh sun
