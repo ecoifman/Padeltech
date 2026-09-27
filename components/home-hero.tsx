@@ -36,15 +36,12 @@ export function HomeHero({ locale, t }: { locale: Locale; t: Copy }) {
             >
               {t.v2.hero.primary}
             </Button>
-            <Button
-              size="lg"
-              variant="inverse"
-              className="w-full sm:w-auto"
-              render={<Link href={localePath(locale, "/clubs")} />}
-              nativeButton={false}
+            <Link
+              href={localePath(locale, "/clubs")}
+              className="type-small inline-flex min-h-11 items-center justify-center px-2 text-paper/85 underline-offset-8 hover:underline"
             >
               {t.v2.hero.secondary}
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

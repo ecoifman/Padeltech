@@ -1,9 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { HomeCourts } from "@/components/home-courts"
-import { HomeEquipment } from "@/components/home-equipment"
-import { HomeExperience } from "@/components/home-experience"
 import { HomeHero } from "@/components/home-hero"
 import {
   HomeDoors,
@@ -52,9 +49,6 @@ export default async function HomePage({
       <HomeDoors locale={locale} t={t} />
       <HomeStats t={t} />
       <HomeProcess t={t} />
-      <HomeCourts locale={locale} t={t} />
-      <HomeEquipment t={t} />
-      <HomeExperience t={t} />
       <HomePlayersBand locale={locale} t={t} />
       <HomeMeeting locale={locale} t={t} />
     </>

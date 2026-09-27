@@ -56,7 +56,7 @@ export default async function PartnersPage({
           <PropertyForm t={t} source="partners" />
         </div>
       </Section>
-      <Section className="border-t border-border bg-card">
+      <Section className="border-t border-border">
         <SectionHeader title={t.v2.developers.needsTitle} />
         <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {t.v2.developers.needs.map((item) => (

@@ -66,7 +66,7 @@ export function SiteHeader({
           <Logo inverted={home} />
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:flex" aria-label={t.nav.main}>
+        <nav className="hidden items-center gap-8 lg:flex" aria-label={t.nav.main}>
           {items.map((item) => {
             const active = pathname.startsWith(item.href)
             return (
@@ -92,7 +92,7 @@ export function SiteHeader({
           <Button
             size="lg"
             variant={home ? "inverse" : "default"}
-            className="hidden xl:inline-flex"
+            className="hidden lg:inline-flex"
             render={<Link href={cta.href} />}
             nativeButton={false}
           >
@@ -104,7 +104,7 @@ export function SiteHeader({
                 <Button
                   variant="ghost"
                   size="icon-lg"
-                  className="size-11 xl:hidden"
+                  className="size-11 lg:hidden"
                 />
               }
             >

@@ -394,7 +394,7 @@ const he = {
     hero: {
       eyebrow: "PADELTECH ישראל",
       title: "מועדוני פאדל בתקן בינלאומי.",
-      body: "PADELTECH מתכננת, מקימה ומפעילה מועדוני פאדל לרשויות, ליזמים ולמפעילים. המועדון הראשון בישראל בדרך.",
+      body: "מתכננים, מקימים ומפעילים מועדוני פאדל לרשויות, ליזמים ולמפעילים.",
       primary: "לרשויות וליזמים",
       secondary: "המועדונים שלנו",
     },
@@ -463,6 +463,7 @@ const he = {
       models: [
         { name: "זיכיון להקמה והפעלה", invests: "PADELTECH", operates: "PADELTECH", gets: "דמי זיכיון שנתיים ומתחם שחוזר לרשות בסוף התקופה" },
         { name: "הקמה בשכירות", invests: "PADELTECH", operates: "PADELTECH", gets: "דמי שכירות על הקרקע או המבנה" },
+        { name: "שותפות", invests: "הרשות, יחד עם PADELTECH", operates: "PADELTECH", gets: "חלק מההכנסות, לפי חלקה בהשקעה" },
         { name: "הקמה בלבד", invests: "הרשות", operates: "הרשות או מפעיל מטעמה", gets: "מתחם מוכן ומפתח ביד, עם תוכנית תחזוקה" },
       ],
       modelsHead: { name: "מודל", invests: "מי משקיע", operates: "מי מפעיל", gets: "מה הרשות מקבלת" },
@@ -962,7 +963,7 @@ const en: typeof he = {
     hero: {
       eyebrow: "PADELTECH Israel",
       title: "Padel clubs built to one international standard.",
-      body: "PADELTECH plans, builds and operates padel clubs for municipalities, developers and operators. The first club in Israel is on its way.",
+      body: "We plan, build and operate padel clubs for municipalities, developers and operators.",
       primary: "For municipalities and developers",
       secondary: "Our clubs",
     },
@@ -1031,6 +1032,7 @@ const en: typeof he = {
       models: [
         { name: "Build-and-operate concession", invests: "PADELTECH", operates: "PADELTECH", gets: "An annual concession fee, and the facility returns at the end of the term" },
         { name: "Lease and build", invests: "PADELTECH", operates: "PADELTECH", gets: "Rent for the land or the building" },
+        { name: "Partnership", invests: "The municipality and PADELTECH together", operates: "PADELTECH", gets: "A share of revenue, in line with its share of the investment" },
         { name: "Build only", invests: "The municipality", operates: "The municipality or its operator", gets: "A turnkey facility with a maintenance plan" },
       ],
       modelsHead: { name: "Model", invests: "Who invests", operates: "Who operates", gets: "What the municipality gets" },

@@ -9,8 +9,6 @@ export function navItems(locale: Locale, t: Copy) {
     { href: localePath(locale, "/partners"), label: t.nav.developers },
     { href: localePath(locale, "/operators"), label: t.nav.operators },
     { href: localePath(locale, "/projects"), label: t.nav.projects },
-    { href: localePath(locale, "/court"), label: t.nav.court },
-    { href: localePath(locale, "/clubs"), label: t.nav.clubs },
     { href: localePath(locale, "/about"), label: t.nav.about },
   ]
 }

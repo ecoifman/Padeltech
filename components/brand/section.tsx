@@ -26,7 +26,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-20 bg-background py-16 text-foreground md:py-24 lg:py-32",
+        "scroll-mt-20 bg-background py-20 text-foreground md:py-28 lg:py-40",
         tone === "dark" && "dark",
         className
       )}
@@ -96,7 +96,7 @@ export function SimBadge({ label, className }: { label: string; className?: stri
   return (
     <span
       className={cn(
-        "type-eyebrow pointer-events-none absolute bottom-3 start-3 bg-ink/70 px-2.5 py-1 text-paper",
+        "type-caption pointer-events-none absolute bottom-3 start-3 text-paper/80 [text-shadow:0_1px_6px_rgb(0_0_0/0.5)]",
         className
       )}
     >

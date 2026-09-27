@@ -3,7 +3,6 @@ import { ArrowLeft, CalendarDays, Hammer, MapPinned, Trophy } from "lucide-react
 
 import { BrandImage } from "@/components/brand-image"
 import { Section, SectionHeader } from "@/components/brand/section"
-import { RegionPicker } from "@/components/region-picker"
 import { Button } from "@/components/ui/button"
 import type { Copy } from "@/lib/copy"
 import type { Locale } from "@/lib/locales"
@@ -31,22 +30,22 @@ export function HomeDoors({ locale, t }: { locale: Locale; t: Copy }) {
   return (
     <Section id="doors">
       <SectionHeader eyebrow={d.kicker} title={d.title} />
-      <ul className="mt-12 grid gap-6 md:mt-16 md:grid-cols-3">
+      <ul className="mt-12 grid gap-x-8 gap-y-14 md:mt-16 md:grid-cols-3">
         {d.items.map((item) => {
           const key = item.key as keyof typeof doorHref
           return (
             <li key={item.key}>
               <Link
                 href={localePath(locale, doorHref[key])}
-                className="group flex h-full flex-col border border-border bg-card transition-colors hover:border-foreground"
+                className="group flex h-full flex-col"
               >
                 <BrandImage
                   src={doorImage[key]}
                   alt=""
-                  className="aspect-[16/10]"
+                  className="aspect-[4/3] transition-opacity group-hover:opacity-90"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="flex flex-1 flex-col gap-3 p-6">
+                <div className="flex flex-1 flex-col gap-2 pt-6">
                   <h3 className="type-h3">{item.title}</h3>
                   <p className="type-body flex-1 text-muted-foreground">{item.body}</p>
                   <span className="type-small inline-flex items-center gap-2 font-medium group-hover:underline group-hover:underline-offset-8">
@@ -67,19 +66,17 @@ export function HomeDoors({ locale, t }: { locale: Locale; t: Copy }) {
 export function HomeStats({ t }: { t: Copy }) {
   const s = t.v2.stats
   return (
-    <Section tone="dark" className="py-12 md:py-16 lg:py-20">
+    <Section className="border-y border-border py-14 md:py-16 lg:py-20">
       <div className="flex items-baseline justify-between gap-4">
         <p className="type-eyebrow">{s.kicker}</p>
-        <p className="type-small rounded-full border border-border px-3 py-1 text-muted-foreground">
-          {s.pending}
-        </p>
+        <p className="type-caption text-muted-foreground">{s.pending}</p>
       </div>
       <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
         {s.items.map((item) => (
-          <div key={item.label} className="border-t border-border pt-5">
+          <div key={item.label}>
             <dt className="type-small text-muted-foreground">{item.label}</dt>
             <dd className="type-number type-h1 mt-2" dir="ltr">
-              {item.value === "FIP" ? <span className="text-lime">FIP</span> : item.value}
+              {item.value}
             </dd>
           </div>
         ))}
@@ -124,21 +121,16 @@ export function HomeProcess({ t }: { t: Copy }) {
 export function HomePlayersBand({ locale, t }: { locale: Locale; t: Copy }) {
   const b = t.v2.playersBand
   return (
-    <Section className="bg-secondary">
-      <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
-        <div>
-          <SectionHeader eyebrow={b.kicker} title={b.title} lead={b.body} />
-          <Button
-            size="lg"
-            variant="outline"
-            className="mt-8 w-full sm:w-auto"
-            render={<Link href={localePath(locale, "/clubs")} />}
-            nativeButton={false}
-          >
-            {b.cta}
-          </Button>
-        </div>
-        <RegionPicker locale={locale} t={t} page="clubs" className="md:pt-9" />
+    <Section className="border-t border-border">
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <SectionHeader eyebrow={b.kicker} title={b.title} lead={b.body} />
+        <Link
+          href={localePath(locale, "/clubs")}
+          className="type-small inline-flex min-h-11 shrink-0 items-center gap-2 font-medium underline-offset-8 hover:underline"
+        >
+          {b.cta}
+          <Arrow />
+        </Link>
       </div>
     </Section>
   )

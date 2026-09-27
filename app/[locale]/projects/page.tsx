@@ -36,7 +36,7 @@ export default async function ProjectsPage({ params }: Props) {
           <p className="type-body mt-3 max-w-prose text-muted-foreground">{p.emptyBody}</p>
         </div>
       </Section>
-      <Section className="border-t border-border bg-card">
+      <Section className="border-t border-border">
         <SectionHeader title={p.visionTitle} />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {vision.map((src) => (

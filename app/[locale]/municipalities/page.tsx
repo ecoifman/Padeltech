@@ -35,7 +35,7 @@ export default async function MunicipalitiesPage({ params }: Props) {
         </div>
       </Section>
 
-      <Section className="border-t border-border bg-card">
+      <Section className="border-t border-border">
         <SectionHeader title={m.modelsTitle} lead={m.modelsNote} />
         <div className="mt-10 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-start">
@@ -61,7 +61,7 @@ export default async function MunicipalitiesPage({ params }: Props) {
         </div>
       </Section>
 
-      <Section>
+      <Section className="border-t border-border">
         <SectionHeader title={m.residentsTitle} />
         <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {m.residents.map((item) => (
@@ -73,23 +73,14 @@ export default async function MunicipalitiesPage({ params }: Props) {
         </ul>
       </Section>
 
-      <Section tone="dark">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-          <BrandImage
-            src="/brand/cinema/cinema-night-rally.png"
-            alt=""
-            simLabel={t.sim}
-            className="aspect-[16/10]"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div>
-            <SectionHeader title={m.neighboursTitle} />
-            <p className="type-lead mt-5 text-muted-foreground">{m.neighbours}</p>
-          </div>
+      <Section className="border-t border-border">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-16">
+          <SectionHeader title={m.neighboursTitle} />
+          <p className="type-lead text-muted-foreground">{m.neighbours}</p>
         </div>
       </Section>
 
-      <Section>
+      <Section className="border-t border-border">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
             <SectionHeader title={m.tenderTitle} />
@@ -102,7 +93,7 @@ export default async function MunicipalitiesPage({ params }: Props) {
             </ul>
             <p className="type-small mt-6 text-muted-foreground">{m.tenderNote}</p>
           </div>
-          <div id="contact" className="scroll-mt-24 border border-border bg-card p-6 md:p-8">
+          <div id="contact" className="scroll-mt-24">
             <h2 className="type-h2">{m.formTitle}</h2>
             <p className="type-body mt-3 text-muted-foreground">{m.formBody}</p>
             <div className="mt-8">

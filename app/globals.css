@@ -230,6 +230,11 @@
     text-transform: uppercase;
   }
 }
+@utility type-caption {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
 @utility type-number {
   font-variant-numeric: tabular-nums;
   font-weight: 300;

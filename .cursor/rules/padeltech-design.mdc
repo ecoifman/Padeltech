@@ -9,6 +9,9 @@ alwaysApply: false
 Look: quiet, architectural, premium club. Deep navy and warm paper, generous space,
 sharp corners, one lime accent. Think gallery signage, not sports-store banner.
 
+## Minimal by default
+One light background with hairline dividers; at most one dark (navy) block per page. No frames or fills around cards. Fewer images, each one earning its place. One primary button per screen; secondary actions are text links.
+
 ## Hard rules
 1. NO raw hex values outside `app/globals.css`. Use tokens (`bg-background`, `text-muted-foreground`, `bg-lime`…).
 2. NO arbitrary Tailwind values for type or tracking (`text-[0.7rem]`, `tracking-[0.28em]`).
@@ -111,7 +114,7 @@ Max line length for running text: `max-w-[60ch]` → use `max-w-prose`.
 
 ## Layout & spacing
 - Container: `mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-10` → wrap as `<Container>` component.
-- Section rhythm: `py-16 md:py-24 lg:py-32`. Never less than `py-16`.
+- Section rhythm: `py-20 md:py-28 lg:py-40` (the Section component). Never less than `py-16`.
 - Grid: 12 columns desktop, 4 on mobile; gaps `gap-6 lg:gap-10`.
 - Stack inside a section: eyebrow → title (mt-3) → lead (mt-5) → content (mt-10 md:mt-14) → CTA (mt-10).
 - Hairline dividers: `border-t border-border`, never shadows. No drop shadows anywhere.
