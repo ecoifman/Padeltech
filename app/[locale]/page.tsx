@@ -7,7 +7,6 @@ import {
   HomeMeeting,
   HomePlayersBand,
   HomeProcess,
-  HomeStats,
 } from "@/components/v2-home"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
@@ -47,7 +46,6 @@ export default async function HomePage({
     <>
       <HomeHero locale={locale} t={t} />
       <HomeDoors locale={locale} t={t} />
-      <HomeStats t={t} />
       <HomeProcess t={t} />
       <HomePlayersBand locale={locale} t={t} />
       <HomeMeeting locale={locale} t={t} />
