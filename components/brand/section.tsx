@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui-layout"
 
 /**
- * One section of a page. `tone="dark"` flips the design tokens to the charcoal
+ * One section of a page. `tone="dark"` flips the design tokens to the navy
  * palette, so every component inside renders correctly on either surface.
  */
 export function Section({

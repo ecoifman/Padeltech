@@ -44,7 +44,7 @@ export default async function PadelPage({
             </p>
           </div>
           <BrandImage
-            src="/brand/cinema/film-play.jpg"
+            src="/brand/cinema/film-play-clean.jpg"
             alt=""
             simLabel={t.sim}
             className="aspect-[16/11] min-h-56"

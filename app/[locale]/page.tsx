@@ -32,7 +32,7 @@ export async function generateMetadata({
       title: t.meta.title,
       description: t.meta.description,
       locale: locale === "he" ? "he_IL" : "en_US",
-      images: ["/brand/cinema/hero-poster.jpg"],
+      images: ["/brand/cinema/hero-poster-clean.jpg"],
     },
   }
 }

@@ -16,11 +16,12 @@ export function HomeHero({ locale, t }: { locale: Locale; t: Copy }) {
     <section className="dark relative isolate h-[92svh] min-h-[34rem] w-full overflow-hidden bg-ink text-paper">
       <CinematicVideo
         src="/brand/cinema/hero.mp4"
-        poster="/brand/cinema/hero-poster.jpg"
+        poster="/brand/cinema/hero-poster-clean.jpg"
         className="contrast-[1.06] saturate-[0.82]"
       />
       <FilmGrain />
       <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-ink/60 to-transparent" />
       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1200px] flex-col justify-end px-4 pb-12 sm:px-6 md:pb-20 lg:px-10">
         <div className="max-w-2xl">
           <p className="type-eyebrow text-paper/75">{t.hero.eyebrow}</p>

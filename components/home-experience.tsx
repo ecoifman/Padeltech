@@ -8,7 +8,8 @@ export function HomeExperience({ t }: { t: Copy }) {
       <Container>
         <p className="type-eyebrow">{t.experience.kicker}</p>
       </Container>
-      <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:px-6 lg:mx-auto lg:grid lg:max-w-[1200px] lg:grid-cols-6 lg:overflow-visible lg:px-10">
+      <div className="mt-8 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto pb-2 [scrollbar-width:none] sm:scroll-px-6 lg:mx-auto lg:grid lg:max-w-[1200px] lg:grid-cols-6 lg:overflow-visible lg:px-10">
+        <span aria-hidden className="w-0 shrink-0 sm:w-2 lg:hidden" />
         {t.experience.moments.map((moment) => (
           <figure key={moment.word} className="w-[62vw] max-w-64 shrink-0 snap-start lg:w-auto">
             <BrandImage
@@ -24,6 +25,7 @@ export function HomeExperience({ t }: { t: Copy }) {
             </figcaption>
           </figure>
         ))}
+        <span aria-hidden className="w-0 shrink-0 sm:w-2 lg:hidden" />
       </div>
     </section>
   )

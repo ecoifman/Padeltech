@@ -12,7 +12,7 @@ export function HomeWellness({ locale, t }: { locale: Locale; t: Copy }) {
     <section className="bg-secondary text-foreground">
       <div className="grid md:grid-cols-2">
         <BrandImage
-          src="/brand/cinema/film-wellness.jpg"
+          src="/brand/cinema/cinema-wellness.png"
           alt=""
           simLabel={t.sim}
           className="aspect-[4/3] md:aspect-auto md:h-full md:min-h-[36rem]"

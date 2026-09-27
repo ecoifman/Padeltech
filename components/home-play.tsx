@@ -8,10 +8,10 @@ import type { Locale } from "@/lib/locales"
 import { signupHref } from "@/lib/paths"
 
 const photos = [
-  "/brand/cinema/film-play.jpg",
-  "/brand/cinema/film-colonnade.jpg",
-  "/brand/cinema/film-aerial.jpg",
-  "/brand/cinema/film-evening.jpg",
+  "/brand/cinema/padel-women-play.png", // first time
+  "/brand/cinema/padel-community.png", // looking for people to play with
+  "/brand/cinema/cinema-glass-play.png", // training
+  "/brand/cinema/film-play-clean.jpg", // already a four
 ] as const
 
 export function HomePlay({ locale, t }: { locale: Locale; t: Copy }) {

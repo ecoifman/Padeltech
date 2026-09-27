@@ -58,14 +58,14 @@
 
 :root {
   /* brand */
-  --ink: #1b1b1b;
-  --ink-2: #2a2a2a;
+  --ink: #0e2238;          /* brand navy (from the logo) */
+  --ink-2: #17304a;
   --paper: #efece7;
   --paper-2: #e8e4dc;
   --paper-3: #f7f5f1;
   --line: #d4d0c8;
-  --stone: #5c5c5c;
-  --lime: #c8d64b;
+  --stone: #55606b;
+  --lime: #c3e64e;         /* brand lime (from the logo) */
 
   /* semantic (shadcn) */
   --background: var(--paper);
@@ -88,7 +88,7 @@
   --ring: var(--ink);
   --chart-1: var(--lime);
   --chart-2: var(--ink);
-  --chart-3: #8a8a8a;
+  --chart-3: #8a96a3;
   --chart-4: #cdcac6;
   --chart-5: #e8dfd1;
   --radius: 0;
@@ -102,7 +102,7 @@
   --sidebar-ring: var(--ink);
 }
 
-/* Dark = the charcoal sections of the brand. Wrap a section in .dark to flip it. */
+/* Dark = the navy sections of the brand. Wrap a section in .dark to flip it. */
 .dark {
   --background: var(--ink);
   --foreground: var(--paper);
@@ -115,7 +115,7 @@
   --secondary: var(--ink-2);
   --secondary-foreground: var(--paper);
   --muted: var(--ink-2);
-  --muted-foreground: #a8a49d;
+  --muted-foreground: #a9b4bf;
   --accent: var(--ink-2);
   --accent-foreground: var(--paper);
   --destructive: oklch(0.704 0.191 22.216);

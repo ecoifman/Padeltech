@@ -6,7 +6,7 @@ alwaysApply: false
 
 # PADELTECH design system
 
-Look: quiet, architectural, premium club. Charcoal and warm paper, generous space,
+Look: quiet, architectural, premium club. Deep navy and warm paper, generous space,
 sharp corners, one lime accent. Think gallery signage, not sports-store banner.
 
 ## Hard rules
@@ -15,14 +15,14 @@ sharp corners, one lime accent. Think gallery signage, not sports-store banner.
    Use the type utilities below (`type-eyebrow`, `type-h2`…). Replace every existing occurrence.
 3. Radius is 0 everywhere. Never add `rounded-*` except `rounded-full` for dots/avatars.
 4. Lime (`--lime`) is an accent only: a single CTA, an active dot, a thin rule, a highlighted number.
-   Max ONE lime element per viewport. Never lime text on paper (fails contrast). Lime text only on charcoal.
+   Max ONE lime element per viewport. Never lime text on paper (fails contrast). Lime text only on navy.
 5. RTL first: use logical utilities only — `ms-/me-`, `ps-/pe-`, `start-/end-`, `text-start/text-end`,
    `border-s/border-e`. Never `ml-/mr-/pl-/pr-/left-/right-/text-left/text-right`.
    Directional icons (arrows, chevrons) get `rtl:-scale-x-100`.
 6. Hebrew text never gets letter-spacing above `0.04em` and never `uppercase`.
    Wide tracking + uppercase apply to Latin only, via `:lang(en)` (built into `type-eyebrow`).
 7. Every image goes through `next/image` with real `alt` text in the current locale, `sizes` set,
-   and a charcoal placeholder background so a missing asset never shows a broken icon.
+   and a navy placeholder background so a missing asset never shows a broken icon.
 8. Respect `prefers-reduced-motion`. Motion: 200ms `ease-out` for UI, 600–900ms for section reveals. No bounce.
 
 ## Tokens (source of truth — `app/globals.css`)
@@ -30,14 +30,14 @@ sharp corners, one lime accent. Think gallery signage, not sports-store banner.
 ```css
 :root {
   /* brand */
-  --ink: #1b1b1b;        /* charcoal */
-  --ink-2: #2a2a2a;
+  --ink: #0e2238;        /* brand navy, from the logo */
+  --ink-2: #17304a;
   --paper: #efece7;      /* warm paper */
   --paper-2: #e8e4dc;
   --paper-3: #f7f5f1;
   --line: #d4d0c8;
-  --stone: #5c5c5c;      /* muted text on paper, 5.7:1 */
-  --lime: #c8d64b;       /* accent only */
+  --stone: #55606b;      /* muted text on paper */
+  --lime: #c3e64e;       /* brand lime, accent only */
 
   /* semantic (shadcn) */
   --background: var(--paper);
@@ -60,9 +60,9 @@ sharp corners, one lime accent. Think gallery signage, not sports-store banner.
   --radius: 0;
 }
 
-/* Dark = the charcoal sections of the brand, NOT navy. */
+/* Dark = the navy sections of the brand. */
 .dark {
-  --background: #141414;
+  --background: var(--ink);
   --foreground: var(--paper);
   --card: var(--ink);
   --card-foreground: var(--paper);
@@ -73,7 +73,7 @@ sharp corners, one lime accent. Think gallery signage, not sports-store banner.
   --secondary: var(--ink-2);
   --secondary-foreground: var(--paper);
   --muted: var(--ink-2);
-  --muted-foreground: #a8a49d;
+  --muted-foreground: #a9b4bf;
   --accent: var(--ink-2);
   --accent-foreground: var(--paper);
   --border: rgb(239 236 231 / 12%);
@@ -85,7 +85,7 @@ sharp corners, one lime accent. Think gallery signage, not sports-store banner.
 Rename the old misleading `--navy` to `--ink` and delete `--cream` duplicates. Remove the
 navy palette (`#0b1c2b`, `#12304a`, `#1a3d5c`, `#c9e24b`, `#f4efe4`) entirely.
 
-A charcoal section inside a light page = wrap it in `className="dark bg-background text-foreground"`,
+A navy section inside a light page = wrap it in `className="dark bg-background text-foreground"`,
 so the same components work on both surfaces.
 
 ## Typography
@@ -127,7 +127,7 @@ Max line length for running text: `max-w-[60ch]` → use `max-w-prose`.
   - `link`: underline on hover, with directional arrow icon.
   - Size: `h-12 px-7 type-small font-medium` default; `h-10 px-5` small. Square corners.
 - `SimBadge` — the "הדמיה / Visualization" tag on renders: `type-eyebrow` at bottom-start, on a
-  `bg-ink/60` chip. One implementation, used everywhere.
+  `bg-ink/70` chip. One implementation, used everywhere.
 - `SpecStat` — big `type-number` value + `type-small` label, top hairline. For FIP numbers.
 - Form fields: 48px height, bottom-border only (`border-0 border-b`), label above in `type-small`,
   error in `text-destructive type-small`. Focus: 2px ring in `--ring`.

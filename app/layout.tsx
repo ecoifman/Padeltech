@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   description:
     "נציגות הרשת העולמית PADELTECH בישראל.",
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+    ],
   },
 }
 
