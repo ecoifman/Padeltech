@@ -16,7 +16,8 @@ export function HomeHero({ locale, t }: { locale: Locale; t: Copy }) {
     <section className="dark relative isolate h-[92svh] min-h-[34rem] w-full overflow-hidden bg-ink text-paper">
       <CinematicVideo
         src="/brand/cinema/hero.mp4"
-        poster="/brand/cinema/hero-poster-clean.jpg"
+        webmSrc="/brand/cinema/hero.webm"
+        poster="/brand/cinema/hero-video-poster.jpg"
         className="contrast-[1.06] saturate-[0.82]"
       />
       <FilmGrain />
