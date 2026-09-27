@@ -6,10 +6,13 @@ import { cn } from "@/lib/utils"
 
 export function CinematicVideo({
   src,
+  webmSrc,
   poster,
   className,
 }: {
   src: string
+  /** Optional WebM (VP9) version, offered first for browsers without H.264. */
+  webmSrc?: string
   poster: string
   className?: string
 }) {
@@ -48,10 +51,9 @@ export function CinematicVideo({
   return (
     <video
       ref={videoRef}
-      src={src}
       poster={poster}
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-top",
+        "pointer-events-none absolute inset-0 h-full min-h-full w-full min-w-full object-cover object-top",
         className
       )}
       autoPlay
@@ -61,6 +63,9 @@ export function CinematicVideo({
       preload="auto"
       disablePictureInPicture
       aria-hidden="true"
-    />
+    >
+      {webmSrc ? <source src={webmSrc} type="video/webm" /> : null}
+      <source src={src} type="video/mp4" />
+    </video>
   )
 }

@@ -91,7 +91,8 @@ export function AdminDashboard({ items }: { items: Inquiry[] }) {
           <p className="mt-2 text-sm text-muted-foreground">{filtered.length} רשומות</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button size="lg" variant="outline" render={<a href="/api/inquiries/export" /> } nativeButton={false}>
+          {/* A file download from an API route, so a plain anchor is correct here. */}
+          <Button size="lg" variant="outline" render={<a href="/api/inquiries/export" download />} nativeButton={false}>
             ייצוא CSV
           </Button>
           <Button size="lg" variant="secondary" onClick={() => void logout()}>

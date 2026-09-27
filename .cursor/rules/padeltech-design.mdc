@@ -1,0 +1,143 @@
+---
+description: PADELTECH Israel design system — tokens, type, layout, components, RTL. Apply to every UI change.
+globs: ["app/**/*.tsx", "components/**/*.tsx", "app/globals.css"]
+alwaysApply: false
+---
+
+# PADELTECH design system
+
+Look: quiet, architectural, premium club. Deep navy and warm paper, generous space,
+sharp corners, one lime accent. Think gallery signage, not sports-store banner.
+
+## Hard rules
+1. NO raw hex values outside `app/globals.css`. Use tokens (`bg-background`, `text-muted-foreground`, `bg-lime`…).
+2. NO arbitrary Tailwind values for type or tracking (`text-[0.7rem]`, `tracking-[0.28em]`).
+   Use the type utilities below (`type-eyebrow`, `type-h2`…). Replace every existing occurrence.
+3. Radius is 0 everywhere. Never add `rounded-*` except `rounded-full` for dots/avatars.
+4. Lime (`--lime`) is an accent only: a single CTA, an active dot, a thin rule, a highlighted number.
+   Max ONE lime element per viewport. Never lime text on paper (fails contrast). Lime text only on navy.
+5. RTL first: use logical utilities only — `ms-/me-`, `ps-/pe-`, `start-/end-`, `text-start/text-end`,
+   `border-s/border-e`. Never `ml-/mr-/pl-/pr-/left-/right-/text-left/text-right`.
+   Directional icons (arrows, chevrons) get `rtl:-scale-x-100`.
+6. Hebrew text never gets letter-spacing above `0.04em` and never `uppercase`.
+   Wide tracking + uppercase apply to Latin only, via `:lang(en)` (built into `type-eyebrow`).
+7. Every image goes through `next/image` with real `alt` text in the current locale, `sizes` set,
+   and a navy placeholder background so a missing asset never shows a broken icon.
+8. Respect `prefers-reduced-motion`. Motion: 200ms `ease-out` for UI, 600–900ms for section reveals. No bounce.
+
+## Tokens (source of truth — `app/globals.css`)
+
+```css
+:root {
+  /* brand */
+  --ink: #0e2238;        /* brand navy, from the logo */
+  --ink-2: #17304a;
+  --paper: #efece7;      /* warm paper */
+  --paper-2: #e8e4dc;
+  --paper-3: #f7f5f1;
+  --line: #d4d0c8;
+  --stone: #55606b;      /* muted text on paper */
+  --lime: #c3e64e;       /* brand lime, accent only */
+
+  /* semantic (shadcn) */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-3);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-3);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--stone);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--ink);
+  --radius: 0;
+}
+
+/* Dark = the navy sections of the brand. */
+.dark {
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--ink);
+  --card-foreground: var(--paper);
+  --popover: var(--ink);
+  --popover-foreground: var(--paper);
+  --primary: var(--lime);
+  --primary-foreground: var(--ink);
+  --secondary: var(--ink-2);
+  --secondary-foreground: var(--paper);
+  --muted: var(--ink-2);
+  --muted-foreground: #a9b4bf;
+  --accent: var(--ink-2);
+  --accent-foreground: var(--paper);
+  --border: rgb(239 236 231 / 12%);
+  --input: rgb(239 236 231 / 16%);
+  --ring: var(--lime);
+}
+```
+
+Rename the old misleading `--navy` to `--ink` and delete `--cream` duplicates. Remove the
+navy palette (`#0b1c2b`, `#12304a`, `#1a3d5c`, `#c9e24b`, `#f4efe4`) entirely.
+
+A navy section inside a light page = wrap it in `className="dark bg-background text-foreground"`,
+so the same components work on both surfaces.
+
+## Typography
+Font: Heebo, self-hosted (`@fontsource-variable/heebo`), weights 300/400/500 only.
+Headings are light (300–400), never bold. Body 300–400.
+
+```css
+@layer utilities {
+  .type-display { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.02; font-weight: 300; letter-spacing: -0.01em; }
+  .type-h1      { font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.08; font-weight: 300; }
+  .type-h2      { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; font-weight: 400; }
+  .type-h3      { font-size: 1.25rem; line-height: 1.35; font-weight: 400; }
+  .type-lead    { font-size: clamp(1.0625rem, 1.4vw, 1.25rem); line-height: 1.65; font-weight: 300; }
+  .type-body    { font-size: 1rem; line-height: 1.7; font-weight: 300; }
+  .type-small   { font-size: 0.875rem; line-height: 1.6; }
+  .type-eyebrow { font-size: 0.8125rem; line-height: 1.4; font-weight: 500; letter-spacing: 0.02em; color: var(--muted-foreground); }
+  .type-eyebrow:lang(en) { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .type-number  { font-variant-numeric: tabular-nums; font-weight: 300; }
+}
+```
+
+Max line length for running text: `max-w-[60ch]` → use `max-w-prose`.
+
+## Layout & spacing
+- Container: `mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-10` → wrap as `<Container>` component.
+- Section rhythm: `py-16 md:py-24 lg:py-32`. Never less than `py-16`.
+- Grid: 12 columns desktop, 4 on mobile; gaps `gap-6 lg:gap-10`.
+- Stack inside a section: eyebrow → title (mt-3) → lead (mt-5) → content (mt-10 md:mt-14) → CTA (mt-10).
+- Hairline dividers: `border-t border-border`, never shadows. No drop shadows anywhere.
+
+## Components (build/extend these, reuse everywhere)
+- `Section` — props: `tone: "light" | "dark"`, `id`, children. Handles padding + `dark` class.
+- `Container` — see above.
+- `SectionHeader` — `eyebrow?`, `title`, `titleLine2?`, `lead?`, `align: "start" | "center"`.
+- `Button` (shadcn, variants):
+  - `default`: ink fill, paper text. Main CTA on paper.
+  - `accent`: lime fill, ink text. Only the ONE key CTA per screen (usually "save me a spot").
+  - `outline`: 1px current-color border, transparent. Secondary CTA.
+  - `link`: underline on hover, with directional arrow icon.
+  - Size: `h-12 px-7 type-small font-medium` default; `h-10 px-5` small. Square corners.
+- `SimBadge` — the "הדמיה / Visualization" tag on renders: `type-eyebrow` at bottom-start, on a
+  `bg-ink/70` chip. One implementation, used everywhere.
+- `SpecStat` — big `type-number` value + `type-small` label, top hairline. For FIP numbers.
+- Form fields: 48px height, bottom-border only (`border-0 border-b`), label above in `type-small`,
+  error in `text-destructive type-small`. Focus: 2px ring in `--ring`.
+
+## Imagery
+- Renders are labelled with `SimBadge` until real photos replace them.
+- Photos: natural light, warm, people mid-play or in the "hour after". No stock smiles to camera.
+- Overlay text on images only with a `bg-gradient-to-t from-ink/70` scrim.
+
+## Accessibility
+- Contrast ≥ 4.5:1 for text (check lime usage especially).
+- Every interactive element has a visible focus state and a hit area ≥ 44×44px.
+- `lang` and `dir` on `<html>` come from the locale; mixed-language spans get `lang="en"` / `dir="ltr"`.

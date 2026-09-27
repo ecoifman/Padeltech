@@ -1,58 +1,56 @@
 import Link from "next/link"
 
+import { SimBadge } from "@/components/brand/section"
 import { CinematicVideo } from "@/components/cinematic-video"
 import { FilmGrain } from "@/components/film-grain"
 import { Button } from "@/components/ui/button"
-import { bookHref } from "@/lib/booking"
+import { primaryCta } from "@/lib/booking"
 import type { Copy } from "@/lib/copy"
 import type { Locale } from "@/lib/locales"
 import { localePath } from "@/lib/paths"
 
 export function HomeHero({ locale, t }: { locale: Locale; t: Copy }) {
+  const cta = primaryCta(locale, t)
+
   return (
-    <section className="relative isolate h-[88svh] min-h-[32rem] w-full overflow-hidden bg-navy text-cream">
+    <section className="dark relative isolate h-[92svh] min-h-[34rem] w-full overflow-hidden bg-ink text-paper">
       <CinematicVideo
         src="/brand/cinema/hero.mp4"
-        poster="/brand/cinema/hero-poster.jpg"
+        webmSrc="/brand/cinema/hero.webm"
+        poster="/brand/cinema/hero-video-poster.jpg"
         className="contrast-[1.06] saturate-[0.82]"
       />
       <FilmGrain />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-[42%] bg-[linear-gradient(to_top,rgba(27,27,27,0.78)_0%,transparent_100%)]" />
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-end px-5 pb-10 md:px-8 md:pb-14">
-        <div className="flex max-w-lg flex-col gap-2">
-          <p className="text-[0.68rem] font-light tracking-[0.32em] text-cream/70">
-            {t.hero.brand}
-          </p>
-          <h1 className="text-4xl font-light leading-[1.1] md:text-6xl">{t.hero.title}</h1>
-          {t.hero.body ? (
-            <p className="mt-1 text-base font-light text-cream/75">{t.hero.body}</p>
-          ) : null}
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-ink/60 to-transparent" />
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1200px] flex-col justify-end px-4 pb-12 sm:px-6 md:pb-20 lg:px-10">
+        <div className="max-w-2xl">
+          <p className="type-eyebrow text-paper/75">{t.hero.eyebrow}</p>
+          <h1 className="type-display mt-4">{t.hero.title}</h1>
+          <p className="type-lead mt-6 max-w-xl text-paper/85">{t.hero.body}</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button
               size="lg"
+              variant="accent"
               className="w-full sm:w-auto"
-              render={<Link href={bookHref(locale)} />}
+              render={<Link href={cta.href} />}
               nativeButton={false}
             >
-              {t.hero.primary}
+              {cta.label}
             </Button>
-            {t.hero.secondary ? (
-              <Button
-                size="lg"
-                variant="inverse"
-                className="w-full sm:w-auto"
-                render={<Link href={`${localePath(locale)}#play`} />}
-                nativeButton={false}
-              >
-                {t.hero.secondary}
-              </Button>
-            ) : null}
+            <Button
+              size="lg"
+              variant="inverse"
+              className="w-full sm:w-auto"
+              render={<Link href={`${localePath(locale)}#how`} />}
+              nativeButton={false}
+            >
+              {t.cta.secondary}
+            </Button>
           </div>
-          <p className="mt-3 text-[0.62rem] font-light tracking-[0.16em] text-cream/45">
-            {t.sim}
-          </p>
         </div>
       </div>
+      <SimBadge label={t.sim} className="start-auto end-4 bottom-4 z-10 sm:end-6 lg:end-10" />
     </section>
   )
 }

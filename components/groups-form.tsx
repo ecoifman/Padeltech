@@ -5,6 +5,7 @@ import { useId, useState } from "react"
 import {
   ConsentRow,
   FormSuccess,
+  PrivacyNote,
   fieldControlClass,
 } from "@/components/form-ui"
 import { fieldMessage, useInquirySubmit } from "@/components/use-inquiry-submit"
@@ -40,7 +41,7 @@ export function GroupsForm({ t, source }: { t: Copy; source: string }) {
   }
 
   if (success) {
-    return <FormSuccess message={t.signup.success} />
+    return <FormSuccess message={t.groupsPage.success} />
   }
 
   return (
@@ -176,7 +177,7 @@ export function GroupsForm({ t, source }: { t: Copy; source: string }) {
         label={t.signup.marketing}
       />
       {error ? (
-        <p role="alert" className="text-sm text-destructive">
+        <p role="alert" className="type-small text-destructive">
           {error}
         </p>
       ) : null}
@@ -190,7 +191,8 @@ export function GroupsForm({ t, source }: { t: Copy; source: string }) {
           t.groupsPage.submit
         )}
       </Button>
-      <p className="text-sm text-muted-foreground">{t.groupsPage.disclaimer}</p>
+      <p className="type-small text-muted-foreground">{t.groupsPage.disclaimer}</p>
+      <PrivacyNote t={t} />
     </form>
   )
 }

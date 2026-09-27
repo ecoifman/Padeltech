@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 import { DirectionProvider } from "@/components/ui/direction"
+import { primaryCta } from "@/lib/booking"
 import { getCopy } from "@/lib/copy"
 import { dirOf, isLocale, locales, type Locale } from "@/lib/locales"
 
@@ -29,7 +30,7 @@ export default async function LocaleLayout({
     <DirectionProvider direction={dir}>
       <LocaleDocument locale={locale} dir={dir} />
       <ThemeProvider>
-        <SiteHeader locale={locale} t={t} />
+        <SiteHeader locale={locale} t={t} cta={primaryCta(locale, t)} />
         <main>{children}</main>
         <SiteFooter locale={locale} t={t} />
       </ThemeProvider>

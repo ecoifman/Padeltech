@@ -1,0 +1,86 @@
+---
+description: PADELTECH Israel brand voice and copy rules (Hebrew first, English second). Apply to any change in lib/copy.ts, metadata, alt text, form messages or FAQ.
+globs: ["lib/copy.ts", "lib/clubs.ts", "app/**/page.tsx", "components/**/*-form.tsx"]
+alwaysApply: false
+---
+
+# PADELTECH voice & language
+
+## Who we are, in one line
+PADELTECH is an international network of padel clubs built to one standard.
+The first club in Israel is on its way. We are not where you rent a court —
+we are where you come to play.
+
+## Personality
+Confident, calm, warm, exact. A club host, not a salesman.
+- **Confident** — short declarative sentences. No hype words, no exclamation marks.
+- **Warm** — we talk about people, the four on court, the hour after. Not just glass and lux.
+- **Exact** — numbers are real (FIP), claims are provable, nothing is promised before it exists.
+
+## Hebrew rules (primary)
+1. Address the reader in plural "אתם" everywhere (בואו, הזמינו, ספרו לנו). Never mix with singular "את/ה".
+2. Write full, natural sentences. Fragments are allowed ONLY in headlines and one-word labels.
+   ❌ "המגרש מגיע מוכן למשחק. לא חד־פעמי להשקה."  ✅ "המגרשים מתוחזקים כל שבוע, לא רק לקראת הפתיחה."
+3. Hebrew typography: gershayim ״ and geresh ׳ (not " '), maqaf ־ in compounds (חד־פעמי), en dash – for ranges,
+   em dash — sparingly. Units: מ׳, ס״מ, מ״מ. Brand name always Latin caps: PADELTECH.
+4. One term per concept (glossary below). Don't alternate synonyms for variety.
+5. Headline ≤ 6 words. Lead ≤ 30 words. Card body ≤ 20 words.
+6. No internal/planning language on the site: never "עד שהמודל סגור", "בתכנון", "נבחן", "אנחנו מתכננים"
+   more than once per page. Say what the reader gets and when they'll hear from us.
+
+## Honesty rules (non-negotiable while no club is open)
+- Never imply booking, payment, prices, a location or opening date that isn't confirmed in `lib/clubs.ts`.
+- Booking-type CTAs say "save me a spot" — never "book now" / "הזמינו מגרש" — until `NEXT_PUBLIC_BOOKING_URL` exists.
+  Implement as a single copy key that switches when the env var is set.
+- "Global network" claims must be backed by something concrete (countries/cities count or a link to the
+  international site). If the data isn't provided, write around it — do not invent numbers.
+- Reference FIP only. Do not mention WPT (World Padel Tour ended in 2023).
+- Renders are labelled "הדמיה" / "Visualization".
+
+## Glossary (use exactly these)
+| Concept | Hebrew | English |
+|---|---|---|
+| a PADELTECH location | מועדון (not "מתחם", not "סניף") | club |
+| the waitlist | רשימת הפתיחה | the opening list |
+| sign up to waitlist (CTA) | שמרו לי מקום | Save me a spot |
+| recovery/wellness zone | הרגע שאחרי | The hour after |
+| corporate/group activity | קבוצות וארגונים | Teams & groups |
+| property owners page | בעלי נכסים ושותפים | Sites & partners |
+| the standard | תקן FIP | FIP standard |
+| a match of four | רביעייה | a four |
+
+## CTA vocabulary (only these)
+- Primary: **שמרו לי מקום** / Save me a spot
+- Secondary: **איך זה יעבוד** / How it will work
+- Groups: **ספרו לנו על הקבוצה** / Tell us about your group
+- Partners: **הציעו נכס** / Propose a site
+- Interest cards: **זה אני** / That's me  (card title carries the meaning)
+Retire: "יצירת קשר" as a main CTA, "הזמינו מגרש", "רשימת פתיחה" as a bare button label.
+
+## Navigation labels
+לשחק · המועדון · קבוצות וארגונים · הרגע שאחרי · הסיפור · שותפים   |   CTA: שמרו לי מקום
+Play · The club · Teams & groups · The hour after · Story · Partners   |   CTA: Save me a spot
+"ישראל" is NOT a nav label and should appear as a headline at most once per page.
+
+## Message map (homepage, top to bottom)
+1. **Hero** — H: "באים לשחק." · Lead: "PADELTECH היא רשת מועדוני פאדל בינלאומית שנבנית בתקן אחד. המועדון הראשון בישראל בדרך." · CTAs: שמרו לי מקום / איך זה יעבוד
+2. **Experience strip** — 6 moments, word + one full short sentence each.
+3. **How it will work** — 4 steps from phone to court, framed as future ("כך זה יעבוד בפתיחה").
+4. **The court** — 3–4 player-felt benefits (light, bounce, space, gear on site). Full FIP spec lives on /partners.
+5. **How do you want to play** — the 4 interest cards (beginner / social / training / have a four) → signup with interest preselected.
+6. **The hour after** — short teaser → /wellness.
+7. **Teams & groups** — one line + CTA → /groups.
+8. **Where do you want to play** — region picker → signup.
+9. **Signup** — name, email, region, interest, consent. Success message promises only an update.
+10. **Closer** — the brand line: "זה לא המקום שבו שוכרים מגרש. זה המקום שבאים אליו לשחק."
+
+## English rules
+- Natural British-neutral English, sentence case for headings and buttons (no ALL CAPS in source strings;
+  uppercase comes from CSS `type-eyebrow` only).
+- It is a translation of meaning, not of words — rewrite, don't transliterate the Hebrew rhythm.
+
+## Forms & microcopy
+- Labels are nouns ("דוא״ל", "אזור מועדף"); placeholders are examples, never instructions.
+- Errors say what to do: "נא להזין כתובת דוא״ל, למשל name@mail.com".
+- Consent checkboxes are unchecked by default and link to /privacy.
+- Success: "תודה, שמרנו לכם מקום. נעדכן לפני כולם כשיהיו פרטים על המועדון באזור שלכם."

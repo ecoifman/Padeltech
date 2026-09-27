@@ -5,6 +5,7 @@ import { useId, useState } from "react"
 import {
   ConsentRow,
   FormSuccess,
+  PrivacyNote,
   fieldControlClass,
 } from "@/components/form-ui"
 import { fieldMessage, useInquirySubmit } from "@/components/use-inquiry-submit"
@@ -43,7 +44,7 @@ export function PropertyForm({ t, source }: { t: Copy; source: string }) {
   }
 
   if (success) {
-    return <FormSuccess message={t.signup.success} />
+    return <FormSuccess message={t.partnersPage.success} />
   }
 
   return (
@@ -187,7 +188,7 @@ export function PropertyForm({ t, source }: { t: Copy; source: string }) {
         label={t.signup.marketing}
       />
       {error ? (
-        <p role="alert" className="text-sm text-destructive">
+        <p role="alert" className="type-small text-destructive">
           {error}
         </p>
       ) : null}
@@ -201,7 +202,8 @@ export function PropertyForm({ t, source }: { t: Copy; source: string }) {
           t.partnersPage.submit
         )}
       </Button>
-      <p className="text-sm text-muted-foreground">{t.partnersPage.disclaimer}</p>
+      <p className="type-small text-muted-foreground">{t.partnersPage.disclaimer}</p>
+      <PrivacyNote t={t} />
     </form>
   )
 }

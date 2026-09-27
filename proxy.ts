@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server"
 
 import { defaultLocale, locales } from "@/lib/locales"
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const locale = locales.find(
     (item) => pathname === `/${item}` || pathname.startsWith(`/${item}/`)

@@ -35,16 +35,16 @@ export default async function PadelPage({
 
   return (
     <>
-      <section className="bg-navy pt-8 text-cream md:pt-10">
+      <section className="dark bg-background pt-8 text-foreground md:pt-10">
         <Container className="grid gap-10 py-12 md:grid-cols-2 md:items-end md:py-20">
           <div>
-            <h1 className="text-4xl leading-[1.08] md:text-6xl">{t.padelPage.title}</h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-cream/80 md:text-lg">
+            <h1 className="type-h1">{t.padelPage.title}</h1>
+            <p className="type-lead mt-6 max-w-xl text-muted-foreground">
               {t.padelPage.lead}
             </p>
           </div>
           <BrandImage
-            src="/brand/cinema/film-play.jpg"
+            src="/brand/cinema/film-play-clean.jpg"
             alt=""
             simLabel={t.sim}
             className="aspect-[16/11] min-h-56"
@@ -54,27 +54,27 @@ export default async function PadelPage({
         </Container>
       </section>
 
-      <section className="bg-cream py-16 md:py-24">
+      <section className="bg-background py-16 md:py-24 lg:py-32">
         <Container className="grid gap-14 md:grid-cols-2">
           <div>
-            <h2 className="text-2xl md:text-4xl">{t.padelPage.beginnersTitle}</h2>
-            <p className="mt-5 text-base leading-8 text-navy/80">
+            <h2 className="type-h2">{t.padelPage.beginnersTitle}</h2>
+            <p className="type-body mt-5 max-w-prose text-muted-foreground">
               {t.padelPage.beginnersBody}
             </p>
           </div>
           <div>
-            <h2 className="text-2xl md:text-4xl">{t.padelPage.stagesTitle}</h2>
-            <p className="mt-5 text-base leading-8 text-navy/80">
+            <h2 className="type-h2">{t.padelPage.stagesTitle}</h2>
+            <p className="type-body mt-5 max-w-prose text-muted-foreground">
               {t.padelPage.stagesBody}
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="bg-cream pb-16 md:pb-24">
-        <Container className="grid gap-10 border-t border-navy/10 pt-14 md:grid-cols-[0.8fr_1.2fr]">
+      <section id="signup" className="scroll-mt-20 bg-background pb-16 md:pb-24 lg:pb-32">
+        <Container className="grid gap-10 border-t border-border pt-14 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="text-2xl md:text-4xl">{t.padelPage.cta}</h2>
+            <h2 className="type-h2">{t.padelPage.cta}</h2>
           </div>
           <ActivityForm
             key={interest || "none"}
