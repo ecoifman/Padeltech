@@ -27,15 +27,16 @@ export default async function GroupsPage({
   const t = getCopy(locale)
 
   return (
-    <section className="bg-cream py-16 md:py-24">
-      <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+    <section id="signup" className="scroll-mt-20 bg-background py-16 md:py-24 lg:py-32">
+      <Container className="grid gap-12 md:grid-cols-2 md:items-start md:gap-16">
         <div>
-          <h1 className="text-4xl leading-[1.08] md:text-6xl">{t.groupsPage.title}</h1>
+          <p className="type-eyebrow">{t.nav.groups}</p>
+          <h1 className="type-h1 mt-3">{t.groupsPage.title}</h1>
           <CopyBlock
             text={t.groupsPage.body}
-            className="mt-6 text-base leading-8 text-navy/80 md:text-lg"
+            className="type-lead mt-6 max-w-prose text-muted-foreground"
           />
-          <p className="mt-6 text-base leading-8 text-navy/80">{t.groupsPage.more}</p>
+          <p className="type-body mt-6 max-w-prose text-muted-foreground">{t.groupsPage.more}</p>
         </div>
         <GroupsForm t={t} source="groups" />
       </Container>

@@ -3,12 +3,11 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 
 import { BrandImage } from "@/components/brand-image"
+import { Section, SectionHeader } from "@/components/brand/section"
 import { Button } from "@/components/ui/button"
-import { Container } from "@/components/ui-layout"
-import { bookHref } from "@/lib/booking"
+import { primaryCta } from "@/lib/booking"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
-import { localePath } from "@/lib/paths"
 
 export async function generateMetadata({
   params,
@@ -18,7 +17,7 @@ export async function generateMetadata({
   const { locale } = await params
   if (!isLocale(locale)) return {}
   const t = getCopy(locale)
-  return { title: `${t.nav.story} — ${t.hero.brand}`, description: t.storyPage.body }
+  return { title: `${t.nav.story} — ${t.hero.brand}`, description: t.storyPage.more }
 }
 
 export default async function StoryPage({
@@ -29,38 +28,37 @@ export default async function StoryPage({
   const { locale } = await params
   if (!isLocale(locale)) notFound()
   const t = getCopy(locale)
+  const cta = primaryCta(locale, t)
 
   return (
     <>
-      <section className="bg-navy py-16 text-cream md:py-28">
-        <Container className="max-w-3xl">
-          <h1 className="text-4xl leading-[1.08] md:text-6xl">{t.storyPage.title}</h1>
-          <p className="mt-8 text-lg leading-8 text-cream/85">{t.storyPage.body}</p>
-        </Container>
-      </section>
+      <Section tone="dark">
+        <SectionHeader as="h1" title={t.storyPage.title} lead={t.storyPage.body} />
+      </Section>
       <BrandImage
         src="/brand/cinema/closer-evening.jpg"
         alt=""
         simLabel={t.sim}
-        className="w-full aspect-[16/10] md:aspect-[21/9]"
+        className="aspect-[16/10] md:aspect-[21/9]"
         sizes="100vw"
       />
-      <section className="bg-cream py-16 md:py-24">
-        <Container className="max-w-3xl">
-          <p className="text-lg leading-8 text-navy/80">{t.storyPage.more}</p>
-          <p className="mt-6 text-lg leading-8 text-navy/80">{t.storyPage.principles}</p>
+      <Section>
+        <div className="max-w-prose">
+          <p className="type-lead">{t.storyPage.more}</p>
+          <p className="type-eyebrow mt-10">{t.storyPage.principles}</p>
           <div className="mt-10">
             <Button
               size="lg"
+              variant="accent"
               className="w-full sm:w-auto"
-              render={<Link href={bookHref(locale)} />}
+              render={<Link href={cta.href} />}
               nativeButton={false}
             >
-              {t.storyPage.cta}
+              {cta.label}
             </Button>
           </div>
-        </Container>
-      </section>
+        </div>
+      </Section>
     </>
   )
 }

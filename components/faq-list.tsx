@@ -16,15 +16,15 @@ export function FaqList({
   if (items.length === 0) return null
 
   return (
-    <section className="border-t border-navy/10 py-14 md:py-16">
-      <h2 className="text-2xl md:text-3xl">{title}</h2>
+    <section className="border-t border-border pt-14 md:pt-16">
+      <h2 className="type-h2">{title}</h2>
       <Accordion className="mt-6">
         {items.map((item) => (
           <AccordionItem key={item.q} value={item.q}>
-            <AccordionTrigger className="py-4 text-base">
+            <AccordionTrigger className="type-body py-5">
               {item.q}
             </AccordionTrigger>
-            <AccordionContent className="text-base leading-7 text-muted-foreground">
+            <AccordionContent className="type-body text-muted-foreground">
               {item.a}
             </AccordionContent>
           </AccordionItem>

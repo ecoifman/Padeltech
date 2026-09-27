@@ -18,14 +18,14 @@ export function ClubView({
 
   return (
     <article>
-      <header className="bg-navy py-20 text-cream md:py-28">
+      <header className="dark bg-background py-20 text-foreground md:py-28">
         <Container className="flex flex-col gap-4">
-          <p className="text-xs tracking-[0.22em] text-lime">
+          <p className="type-eyebrow text-lime">
             {club.status === "active" ? t.clubsPage.statusActive : t.clubsPage.statusComing}
           </p>
-          <h1 className="max-w-3xl text-4xl leading-[1.05] md:text-6xl">{club.name}</h1>
+          <h1 className="type-h1 max-w-3xl">{club.name}</h1>
           {club.location ? (
-            <p className="text-lg text-cream/75">{club.location}</p>
+            <p className="type-lead text-muted-foreground">{club.location}</p>
           ) : null}
           {canBook ? (
             <div className="pt-2">
@@ -46,7 +46,7 @@ export function ClubView({
       {club.images && club.images.length > 0 ? (
         <div
           className={cn(
-            "grid gap-2 bg-navy",
+            "grid gap-2 bg-ink",
             club.images.length > 1 ? "md:grid-cols-2" : "grid-cols-1"
           )}
         >
@@ -66,8 +66,8 @@ export function ClubView({
       <Container className="flex flex-col gap-12 py-14 md:py-20">
         {club.amenities && club.amenities.length > 0 ? (
           <section>
-            <h2 className="text-2xl">{t.clubsPage.amenities}</h2>
-            <ul className="mt-5 space-y-2 text-lg text-navy/80">
+            <h2 className="type-h2">{t.clubsPage.amenities}</h2>
+            <ul className="type-body mt-5 space-y-2 text-muted-foreground">
               {club.amenities.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -77,8 +77,8 @@ export function ClubView({
 
         {club.hours ? (
           <section>
-            <h2 className="text-2xl">{t.clubsPage.hours}</h2>
-            <p className="mt-4 text-lg text-navy/80">{club.hours}</p>
+            <h2 className="type-h2">{t.clubsPage.hours}</h2>
+            <p className="type-body mt-4 text-muted-foreground">{club.hours}</p>
           </section>
         ) : null}
       </Container>

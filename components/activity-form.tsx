@@ -5,6 +5,7 @@ import { useId, useState } from "react"
 import {
   ConsentRow,
   FormSuccess,
+  PrivacyNote,
   fieldControlClass,
 } from "@/components/form-ui"
 import { Button } from "@/components/ui/button"
@@ -18,7 +19,6 @@ import {
   type ActivityInterest,
   type Region,
 } from "@/lib/options"
-import { cn } from "@/lib/utils"
 import { fieldMessage, useInquirySubmit } from "@/components/use-inquiry-submit"
 
 export function ActivityForm({
@@ -26,14 +26,12 @@ export function ActivityForm({
   source,
   defaultInterest = "",
   defaultRegion = "",
-  tone = "cream",
-  id = "signup",
+  id = "signup-form",
 }: {
   t: Copy
   source: string
   defaultInterest?: ActivityInterest | ""
   defaultRegion?: Region | ""
-  tone?: "cream" | "navy"
   id?: string
 }) {
   const formId = useId()
@@ -46,11 +44,7 @@ export function ActivityForm({
   const [wantsReply, setWantsReply] = useState(false)
   const [marketingConsent, setMarketingConsent] = useState(false)
 
-  const inverted = tone === "navy"
-  const control = cn(
-    fieldControlClass,
-    inverted && "border-cream/35 text-cream placeholder:text-cream/40"
-  )
+  const control = fieldControlClass
 
   const labelFor = (code: string) => {
     if (code === "invalidEmail") return t.signup.invalidEmail
@@ -59,13 +53,13 @@ export function ActivityForm({
   }
 
   if (success) {
-    return <FormSuccess message={t.signup.success} className={inverted ? "text-cream" : "text-navy"} />
+    return <FormSuccess message={t.signup.success} />
   }
 
   return (
     <form
       id={id}
-      className="flex scroll-mt-28 flex-col gap-5"
+      className="flex scroll-mt-28 flex-col gap-6"
       onSubmit={async (event) => {
         event.preventDefault()
         await submit(
@@ -149,12 +143,12 @@ export function ActivityForm({
       </Field>
 
       <fieldset className="flex flex-col gap-3">
-        <legend className="text-sm font-medium">{t.signup.interest}</legend>
+        <legend className="type-small font-medium">{t.signup.interest}</legend>
         <div className="flex flex-col gap-2">
           {activityInterests.map((item) => (
             <label
               key={item}
-              className="flex min-h-12 cursor-pointer items-center gap-3 text-sm"
+              className="type-body flex min-h-11 cursor-pointer items-center gap-3"
             >
               <input
                 type="radio"
@@ -162,7 +156,7 @@ export function ActivityForm({
                 value={item}
                 checked={interest === item}
                 onChange={() => setInterest(item)}
-                className="size-5 accent-lime"
+                className="size-5 accent-ink dark:accent-lime"
               />
               {t.interests[item]}
             </label>
@@ -184,7 +178,7 @@ export function ActivityForm({
       />
 
       {error ? (
-        <p role="alert" className="text-sm text-destructive">
+        <p role="alert" className="type-small text-destructive">
           {error}
         </p>
       ) : null}
@@ -199,6 +193,7 @@ export function ActivityForm({
           t.signup.submit
         )}
       </Button>
+      <PrivacyNote t={t} />
     </form>
   )
 }

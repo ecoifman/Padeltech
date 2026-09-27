@@ -1,47 +1,50 @@
 import Link from "next/link"
 
 import { Logo } from "@/components/logo"
-import { Separator } from "@/components/ui/separator"
+import { Container } from "@/components/ui-layout"
 import type { Copy } from "@/lib/copy"
 import type { Locale } from "@/lib/locales"
+import { navItems } from "@/lib/nav"
 import { localePath } from "@/lib/paths"
 
 export function SiteFooter({ locale, t }: { locale: Locale; t: Copy }) {
   const year = new Date().getFullYear()
-  const home = localePath(locale)
-  const links = [
-    { href: `${home}#experience`, label: t.nav.experience },
-    { href: `${home}#play`, label: t.nav.book },
-    { href: `${home}#courts`, label: t.nav.courts },
-    { href: `${home}#gear`, label: t.nav.gear },
-    { href: `${home}#club`, label: t.nav.club },
-    { href: localePath(locale, "/story"), label: t.nav.story },
-  ]
 
   return (
-    <footer className="bg-navy text-cream">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 py-14 md:px-8 md:py-16">
+    <footer className="dark bg-background text-foreground">
+      <Container className="flex flex-col gap-12 py-16 md:py-20">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
-          <div className="flex max-w-md flex-col gap-4">
+          <div className="flex max-w-md flex-col gap-5">
             <Logo inverted />
-            <p className="text-sm font-light tracking-[0.18em] text-cream/55">
-              {t.footer.tagline}
-            </p>
-            <p className="text-sm font-light leading-7 text-cream/70">{t.line}</p>
+            <p className="type-body text-muted-foreground">{t.hero.body}</p>
           </div>
-          <nav className="flex max-w-lg flex-wrap gap-x-6 gap-y-3 text-sm font-light">
-            {links.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-cream">
+          <nav
+            className="grid grid-cols-2 gap-x-10 gap-y-3 sm:grid-cols-3"
+            aria-label={t.nav.main}
+          >
+            {navItems(locale, t).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="type-small py-1 text-muted-foreground transition-colors hover:text-foreground"
+              >
                 {item.label}
               </Link>
             ))}
           </nav>
         </div>
-        <Separator className="bg-cream/15" />
-        <p className="text-xs font-light text-cream/55">
-          © {year} {t.footer.brand}
-        </p>
-      </div>
+        <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="type-small text-muted-foreground">
+            © {year} {t.footer.brand} {t.footer.tagline}
+          </p>
+          <Link
+            href={localePath(locale, "/privacy")}
+            className="type-small text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          >
+            {t.nav.privacy}
+          </Link>
+        </div>
+      </Container>
     </footer>
   )
 }

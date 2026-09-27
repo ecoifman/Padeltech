@@ -92,7 +92,6 @@ export function AdminDashboard({ items }: { items: Inquiry[] }) {
         </div>
         <div className="flex flex-wrap gap-2">
           {/* A file download from an API route, so a plain anchor is correct here. */}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <Button size="lg" variant="outline" render={<a href="/api/inquiries/export" download />} nativeButton={false}>
             ייצוא CSV
           </Button>

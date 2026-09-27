@@ -9,7 +9,7 @@ export function Container({
   className?: string
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-5 md:px-8", className)}>
+    <div className={cn("mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-10", className)}>
       {children}
     </div>
   )
@@ -25,13 +25,7 @@ export function Eyebrow({
   className?: string
 }) {
   return (
-    <p
-      className={cn(
-        "text-xs font-medium text-lime",
-        locale === "en" && "tracking-[0.28em] uppercase",
-        className
-      )}
-    >
+    <p lang={locale} className={cn("type-eyebrow", className)}>
       {children}
     </p>
   )

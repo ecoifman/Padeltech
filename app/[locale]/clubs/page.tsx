@@ -3,10 +3,9 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 
 import { ActivityForm } from "@/components/activity-form"
+import { Section, SectionHeader } from "@/components/brand/section"
 import { FaqList } from "@/components/faq-list"
-import { Button } from "@/components/ui/button"
-import { Container } from "@/components/ui-layout"
-import { bookHref } from "@/lib/booking"
+import { RegionPicker } from "@/components/region-picker"
 import { generalFaq, publishedClubs } from "@/lib/clubs"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
@@ -22,8 +21,8 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {}
   const t = getCopy(locale)
   return {
-    title: `${t.nav.clubs} — ${t.hero.brand}`,
-    description: t.firstClub.body,
+    title: `${t.nav.club} — ${t.hero.brand}`,
+    description: t.clubsPage.body,
   }
 }
 
@@ -45,67 +44,40 @@ export default async function ClubsPage({
 
   return (
     <>
-      <section className="bg-cream py-16 md:py-24">
-        <Container className="max-w-3xl">
-          <h1 className="text-4xl leading-[1.08] md:text-6xl">{t.clubsPage.title}</h1>
-          <p className="mt-6 whitespace-pre-line text-lg font-light leading-8 text-navy/80">
-            {t.firstClub.body}
-          </p>
-        </Container>
-      </section>
+      <Section>
+        <SectionHeader as="h1" eyebrow={t.clubsHome.kicker} title={t.clubsPage.title} lead={t.clubsPage.body} />
+      </Section>
 
-      {clubs.length > 0 ? (
-        <section className="bg-navy py-16 text-cream">
-          <Container className="flex flex-col gap-10">
+      <Section tone="dark">
+        {clubs.length > 0 ? (
+          <ul className="flex flex-col">
             {clubs.map((club) => (
-              <article key={club.id} className="border-t border-cream/15 pt-8">
-                <p className="text-xs tracking-[0.2em] text-lime">
-                  {club.status === "active"
-                    ? t.clubsPage.statusActive
-                    : t.clubsPage.statusComing}
+              <li key={club.id} className="border-t border-border py-8">
+                <p className="type-eyebrow text-lime">
+                  {club.status === "active" ? t.clubsPage.statusActive : t.clubsPage.statusComing}
                 </p>
-                <h2 className="mt-3 text-3xl">{club.name}</h2>
+                <h2 className="type-h2 mt-3">
+                  <Link href={localePath(locale, `/clubs/${club.id}`)} className="hover:underline">
+                    {club.name}
+                  </Link>
+                </h2>
                 {club.location ? (
-                  <p className="mt-2 text-cream/75">{club.location}</p>
+                  <p className="type-body mt-2 text-muted-foreground">{club.location}</p>
                 ) : null}
-                <Link
-                  href={localePath(locale, `/clubs/${club.id}`)}
-                  className="mt-4 inline-flex min-h-12 items-center text-lime"
-                >
-                  {club.name}
-                </Link>
-              </article>
+              </li>
             ))}
-          </Container>
-        </section>
-      ) : (
-        <section className="scroll-mt-24 bg-navy py-16 text-cream md:py-24">
-          <Container>
-            <h2 className="text-3xl font-light md:text-5xl">{t.clubsPage.emptyTitle}</h2>
-            <p className="mt-5 max-w-2xl text-base font-light leading-8 text-cream/80">
-              {t.firstClub.body}
-            </p>
-            <div className="mt-10">
-              <Button
-                size="lg"
-                render={<Link href={bookHref(locale)} />}
-                nativeButton={false}
-              >
-                {t.hero.primary}
-              </Button>
-            </div>
-          </Container>
-        </section>
-      )}
-
-      <section className="bg-cream py-16 md:py-24">
-        <Container className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <h2 className="text-2xl md:text-4xl">{t.clubsPage.cta}</h2>
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              {t.clubsPage.disclaimer}
-            </p>
+          </ul>
+        ) : (
+          <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+            <SectionHeader eyebrow={t.clubsPage.statusComing} title={t.clubsPage.emptyTitle} lead={t.clubsHome.body} />
+            <RegionPicker locale={locale} t={t} page="clubs" className="md:pt-9" />
           </div>
+        )}
+      </Section>
+
+      <Section id="signup">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <SectionHeader title={t.clubsPage.formTitle} lead={t.signup.body} />
           <ActivityForm
             key={`${interest}-${region}`}
             t={t}
@@ -113,11 +85,11 @@ export default async function ClubsPage({
             defaultInterest={interest}
             defaultRegion={region}
           />
-        </Container>
-        <Container>
+        </div>
+        <div className="mt-20">
           <FaqList title={t.faqTitle} items={generalFaq(locale)} />
-        </Container>
-      </section>
+        </div>
+      </Section>
     </>
   )
 }

@@ -1,32 +1,30 @@
-import { Container } from "@/components/ui-layout"
-import type { Copy } from "@/lib/copy"
+import Link from "next/link"
+import { ArrowLeft } from "lucide-react"
 
-export function HomeCourts({ t }: { t: Copy }) {
+import { Section, SectionHeader } from "@/components/brand/section"
+import type { Copy } from "@/lib/copy"
+import type { Locale } from "@/lib/locales"
+import { localePath } from "@/lib/paths"
+
+export function HomeCourts({ locale, t }: { locale: Locale; t: Copy }) {
   return (
-    <section id="courts" className="scroll-mt-24 bg-navy py-16 text-cream md:py-20">
-      <Container>
-        <p className="text-[0.7rem] font-light tracking-[0.28em] text-cream/40">
-          {t.courts.kicker}
-        </p>
-        <h2 className="mt-4 max-w-xl text-3xl font-light leading-[1.15] md:text-4xl">
-          {t.courts.title}
-        </h2>
-        <p className="mt-5 max-w-xl text-base font-light leading-8 text-cream/70">
-          {t.courts.body}
-        </p>
-        <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {t.courts.items.map((item) => (
-            <li key={item.label} className="border-t border-cream/12 pt-6">
-              <p className="text-[0.7rem] font-light tracking-[0.16em] text-cream/55">
-                {item.label}
-              </p>
-              <p className="mt-3 max-w-sm text-sm font-light leading-7 text-cream/75">
-                {item.body}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </section>
+    <Section id="courts" tone="dark">
+      <SectionHeader eyebrow={t.courts.kicker} title={t.courts.title} lead={t.courts.body} />
+      <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
+        {t.courts.items.map((item) => (
+          <li key={item.label} className="border-t border-border pt-6">
+            <h3 className="type-h3">{item.label}</h3>
+            <p className="type-small mt-3 max-w-xs text-muted-foreground">{item.body}</p>
+          </li>
+        ))}
+      </ul>
+      <Link
+        href={`${localePath(locale, "/partners")}#standard`}
+        className="type-small mt-12 inline-flex min-h-11 items-center gap-2 underline-offset-8 hover:underline"
+      >
+        {t.courts.more}
+        <ArrowLeft className="size-4 ltr:-scale-x-100" aria-hidden />
+      </Link>
+    </Section>
   )
 }

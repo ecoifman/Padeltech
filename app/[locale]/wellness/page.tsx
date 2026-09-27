@@ -37,10 +37,10 @@ export default async function WellnessPage({
 
   return (
     <>
-      <section className="bg-cream py-16 md:py-24">
-        <Container className="max-w-3xl">
-          <h1 className="text-4xl leading-[1.08] md:text-6xl">{t.wellnessPage.title}</h1>
-          <p className="mt-6 text-lg leading-8 text-navy/80">{t.wellnessPage.lead}</p>
+      <section className="bg-background py-16 md:py-24 lg:py-32">
+        <Container>
+          <h1 className="type-h1 max-w-3xl">{t.wellnessPage.title}</h1>
+          <p className="type-lead mt-6 max-w-prose text-muted-foreground">{t.wellnessPage.lead}</p>
         </Container>
       </section>
 
@@ -48,29 +48,29 @@ export default async function WellnessPage({
         src="/brand/cinema/cinema-night-rally.png"
         alt=""
         simLabel={t.sim}
-        className="w-full aspect-[16/10] md:aspect-[21/9]"
+        className="aspect-[16/10] md:aspect-[21/9]"
         sizes="100vw"
       />
 
-      <section className="bg-navy py-16 text-cream md:py-24">
-        <Container className="flex flex-col gap-12">
+      <section className="dark bg-background py-16 text-foreground md:py-24 lg:py-32">
+        <Container className="grid gap-12 md:grid-cols-3">
           {ideas.map((item) => (
             <div key={item.title} className="border-s-2 border-lime ps-5 md:ps-8">
-              <h2 className="text-xl md:text-2xl">{item.title}</h2>
-              <p className="mt-3 max-w-xl text-base leading-8 text-cream/80">
+              <h2 className="type-h3">{item.title}</h2>
+              <p className="type-body mt-3 text-muted-foreground">
                 {item.body}
               </p>
             </div>
           ))}
-          <p className="max-w-2xl text-base leading-8 text-cream/75">
+          <p className="type-small max-w-2xl text-muted-foreground md:col-span-3">
             {t.wellnessPage.close}
           </p>
         </Container>
       </section>
 
-      <section className="bg-cream py-16 md:py-24">
-        <Container className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-          <h2 className="text-2xl md:text-4xl">{t.wellnessPage.cta}</h2>
+      <section id="signup" className="scroll-mt-20 bg-background py-16 md:py-24 lg:py-32">
+        <Container className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <h2 className="type-h2">{t.wellnessPage.cta}</h2>
           <ActivityForm t={t} source="wellness" defaultInterest="wellness" />
         </Container>
       </section>

@@ -39,8 +39,14 @@
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-lime: var(--lime);
-  --color-navy: var(--navy);
-  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-line: var(--line);
+  --color-stone: var(--stone);
+  --font-sans: "Heebo Variable", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -51,70 +57,79 @@
 }
 
 :root {
+  /* brand */
+  --ink: #1b1b1b;
+  --ink-2: #2a2a2a;
+  --paper: #efece7;
+  --paper-2: #e8e4dc;
+  --paper-3: #f7f5f1;
+  --line: #d4d0c8;
+  --stone: #5c5c5c;
   --lime: #c8d64b;
-  --navy: #1b1b1b;
-  --cream: #efece7;
-  --background: #efece7;
-  --foreground: #1b1b1b;
-  --card: #efece7;
-  --card-foreground: #1b1b1b;
-  --popover: #f7f5f1;
-  --popover-foreground: #1b1b1b;
-  --primary: #1b1b1b;
-  --primary-foreground: #efece7;
-  --secondary: #e8e4dc;
-  --secondary-foreground: #1b1b1b;
-  --muted: #e8e4dc;
-  --muted-foreground: #5c5c5c;
-  --accent: #e8e4dc;
-  --accent-foreground: #1b1b1b;
+
+  /* semantic (shadcn) */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-3);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-3);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--stone);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #d4d0c8;
-  --input: #d4d0c8;
-  --ring: #1b1b1b;
-  --chart-1: #c8d64b;
-  --chart-2: #1b1b1b;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--ink);
+  --chart-1: var(--lime);
+  --chart-2: var(--ink);
   --chart-3: #8a8a8a;
   --chart-4: #cdcac6;
   --chart-5: #e8dfd1;
   --radius: 0;
-  --sidebar: #efece7;
-  --sidebar-foreground: #1b1b1b;
-  --sidebar-primary: #1b1b1b;
-  --sidebar-primary-foreground: #efece7;
-  --sidebar-accent: #e8e4dc;
-  --sidebar-accent-foreground: #1b1b1b;
-  --sidebar-border: #d4d0c8;
-  --sidebar-ring: #1b1b1b;
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--paper-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--ink);
 }
 
+/* Dark = the charcoal sections of the brand. Wrap a section in .dark to flip it. */
 .dark {
-  --background: #0b1c2b;
-  --foreground: #f4efe4;
-  --card: #12304a;
-  --card-foreground: #f4efe4;
-  --popover: #12304a;
-  --popover-foreground: #f4efe4;
-  --primary: #c9e24b;
-  --primary-foreground: #12304a;
-  --secondary: #1a3d5c;
-  --secondary-foreground: #f4efe4;
-  --muted: #1a3d5c;
-  --muted-foreground: #b7c3cc;
-  --accent: #1a3d5c;
-  --accent-foreground: #f4efe4;
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--ink-2);
+  --card-foreground: var(--paper);
+  --popover: var(--ink-2);
+  --popover-foreground: var(--paper);
+  --primary: var(--paper);
+  --primary-foreground: var(--ink);
+  --secondary: var(--ink-2);
+  --secondary-foreground: var(--paper);
+  --muted: var(--ink-2);
+  --muted-foreground: #a8a49d;
+  --accent: var(--ink-2);
+  --accent-foreground: var(--paper);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgb(244 239 228 / 12%);
-  --input: rgb(244 239 228 / 16%);
-  --ring: #c9e24b;
-  --sidebar: #12304a;
-  --sidebar-foreground: #f4efe4;
-  --sidebar-primary: #c9e24b;
-  --sidebar-primary-foreground: #12304a;
-  --sidebar-accent: #1a3d5c;
-  --sidebar-accent-foreground: #f4efe4;
-  --sidebar-border: rgb(244 239 228 / 12%);
-  --sidebar-ring: #c9e24b;
+  --border: rgb(239 236 231 / 14%);
+  --input: rgb(239 236 231 / 22%);
+  --ring: var(--lime);
+  --sidebar: var(--ink);
+  --sidebar-foreground: var(--paper);
+  --sidebar-primary: var(--paper);
+  --sidebar-primary-foreground: var(--ink);
+  --sidebar-accent: var(--ink-2);
+  --sidebar-accent-foreground: var(--paper);
+  --sidebar-border: rgb(239 236 231 / 14%);
+  --sidebar-ring: var(--lime);
 }
 
 @layer base {
@@ -129,21 +144,20 @@
 
   body {
     @apply overflow-x-hidden bg-background font-sans font-light text-foreground antialiased;
-    letter-spacing: 0.02em;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    text-wrap: balance;
   }
 
   ::selection {
-    background: var(--navy);
-    color: var(--cream);
+    background: var(--ink);
+    color: var(--paper);
   }
 }
 
@@ -166,4 +180,57 @@
   height: 1px;
   background: currentColor;
   opacity: 0.28;
+}
+
+/* Type scale — use these instead of arbitrary text-[…] / tracking-[…] values. */
+@utility type-display {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.02;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+@utility type-h1 {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.08;
+  font-weight: 300;
+}
+@utility type-h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 300;
+}
+@utility type-h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 400;
+}
+@utility type-lead {
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  font-weight: 300;
+}
+@utility type-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+@utility type-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+@utility type-eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted-foreground);
+  &:lang(en) {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+@utility type-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
 }

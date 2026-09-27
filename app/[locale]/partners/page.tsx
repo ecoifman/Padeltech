@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
+import { Section, SectionHeader } from "@/components/brand/section"
+import { HomeStandard } from "@/components/home-standard"
 import { PropertyForm } from "@/components/property-form"
-import { Container } from "@/components/ui-layout"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
 
@@ -30,30 +31,33 @@ export default async function PartnersPage({
   const t = getCopy(locale)
 
   return (
-    <section className="bg-cream py-16 md:py-24">
-      <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-start">
-        <div>
-          <h1 className="text-4xl leading-[1.08] md:text-6xl">
-            {t.partnersPage.title}
-            <span className="mt-2 block">{t.partnersPage.titleLine2}</span>
-          </h1>
-          <p className="mt-6 text-base leading-8 text-navy/80 md:text-lg">
-            {t.partnersPage.body}
-          </p>
-          <p className="mt-4 text-base leading-8 text-navy/80">
-            {t.partnersPage.audience}
-          </p>
-          <h2 className="mt-10 text-2xl">{t.partnersPage.includeTitle}</h2>
-          <ul className="mt-5 space-y-3 text-base leading-7 text-navy/80">
-            {t.partnersPage.include.map((item) => (
-              <li key={item} className="border-s-2 border-lime ps-4">
-                {item}
-              </li>
-            ))}
-          </ul>
+    <>
+      <Section>
+        <div className="grid gap-12 md:grid-cols-2 md:items-start md:gap-16">
+          <div>
+            <SectionHeader
+              as="h1"
+              eyebrow={t.nav.partners}
+              title={t.partnersPage.title}
+              titleLine2={t.partnersPage.titleLine2}
+              lead={t.partnersPage.body}
+            />
+            <p className="type-body mt-4 max-w-prose text-muted-foreground">
+              {t.partnersPage.audience}
+            </p>
+            <h2 className="type-h3 mt-12">{t.partnersPage.includeTitle}</h2>
+            <ul className="mt-5 flex flex-col gap-3">
+              {t.partnersPage.include.map((item) => (
+                <li key={item} className="type-body border-s-2 border-lime ps-4">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <PropertyForm t={t} source="partners" />
         </div>
-        <PropertyForm t={t} source="partners" />
-      </Container>
-    </section>
+      </Section>
+      <HomeStandard t={t} />
+    </>
   )
 }
