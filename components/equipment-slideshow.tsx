@@ -76,7 +76,7 @@ export function EquipmentSlideshow({
               aria-label={slide.label}
               aria-current={i === index}
               className={`pointer-events-auto relative size-2 rounded-full after:absolute after:-inset-[18px] after:content-[''] ${
-                i === index ? "bg-lime" : "bg-paper/35"
+                i === index ? "bg-paper" : "bg-paper/35"
               }`}
               onClick={() => go(i)}
             />

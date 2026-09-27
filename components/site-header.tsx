@@ -77,7 +77,7 @@ export function SiteHeader({
                 className={cn(
                   "type-small py-2 transition-opacity hover:opacity-100",
                   active
-                    ? "underline decoration-lime decoration-2 underline-offset-8 opacity-100"
+                    ? "underline decoration-current decoration-1 underline-offset-8 opacity-100"
                     : "opacity-75"
                 )}
               >

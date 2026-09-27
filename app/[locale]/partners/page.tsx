@@ -47,7 +47,7 @@ export default async function PartnersPage({
             <h2 className="type-h3 mt-12">{t.partnersPage.includeTitle}</h2>
             <ul className="mt-5 flex flex-col gap-3">
               {t.partnersPage.include.map((item) => (
-                <li key={item} className="type-body border-s-2 border-lime ps-4">
+                <li key={item} className="type-body border-s-2 border-foreground ps-4">
                   {item}
                 </li>
               ))}

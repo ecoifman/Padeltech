@@ -7,8 +7,8 @@ import { SimBadge } from "@/components/brand/section"
 import { cn } from "@/lib/utils"
 
 /**
- * next/image inside a navy frame. If the file is missing the image hides
- * itself, leaving a clean navy block instead of a broken-image icon.
+ * next/image inside a dark frame. If the file is missing the image hides
+ * itself, leaving a clean dark block instead of a broken-image icon.
  */
 export function BrandImage({
   src,

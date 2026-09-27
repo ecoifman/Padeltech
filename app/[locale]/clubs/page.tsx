@@ -53,7 +53,7 @@ export default async function ClubsPage({
           <ul className="flex flex-col">
             {clubs.map((club) => (
               <li key={club.id} className="border-t border-border py-8">
-                <p className="type-eyebrow text-lime">
+                <p className="type-eyebrow">
                   {club.status === "active" ? t.clubsPage.statusActive : t.clubsPage.statusComing}
                 </p>
                 <h2 className="type-h2 mt-3">

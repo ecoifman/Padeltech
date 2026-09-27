@@ -41,6 +41,8 @@
   --color-lime: var(--lime);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
   --color-paper-3: var(--paper-3);
@@ -57,25 +59,29 @@
 }
 
 :root {
-  /* brand */
-  --ink: #0e2238;          /* brand navy (from the logo) */
-  --ink-2: #17304a;
-  --paper: #efece7;
-  --paper-2: #e8e4dc;
-  --paper-3: #f7f5f1;
-  --line: #d4d0c8;
-  --stone: #55606b;
-  --lime: #c3e64e;         /* brand lime (from the logo) */
+  /* brand: logo colours, used on buttons only */
+  --navy: #0e2238;         /* logo navy */
+  --navy-2: #1a3350;
+  --lime: #c3e64e;         /* logo lime */
+
+  /* neutrals: white page, black type */
+  --ink: #0a0a0a;
+  --ink-2: #1c1c1c;
+  --paper: #ffffff;
+  --paper-2: #f5f5f5;
+  --paper-3: #ffffff;
+  --line: #e6e6e6;
+  --stone: #5c5c5c;
 
   /* semantic (shadcn) */
   --background: var(--paper);
   --foreground: var(--ink);
   --card: var(--paper-3);
   --card-foreground: var(--ink);
-  --popover: var(--paper-3);
+  --popover: var(--paper);
   --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--paper);
+  --primary: var(--navy);
+  --primary-foreground: #ffffff;
   --secondary: var(--paper-2);
   --secondary-foreground: var(--ink);
   --muted: var(--paper-2);
@@ -84,52 +90,52 @@
   --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --border: var(--line);
-  --input: var(--line);
+  --input: #cfcfcf;
   --ring: var(--ink);
   --chart-1: var(--lime);
-  --chart-2: var(--ink);
-  --chart-3: #8a96a3;
-  --chart-4: #cdcac6;
-  --chart-5: #e8dfd1;
+  --chart-2: var(--navy);
+  --chart-3: #8a8a8a;
+  --chart-4: #cfcfcf;
+  --chart-5: #e6e6e6;
   --radius: 0;
   --sidebar: var(--paper);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--ink);
-  --sidebar-primary-foreground: var(--paper);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: var(--paper-2);
   --sidebar-accent-foreground: var(--ink);
   --sidebar-border: var(--line);
   --sidebar-ring: var(--ink);
 }
 
-/* Dark = the navy sections of the brand. Wrap a section in .dark to flip it. */
+/* Dark = sections over photos and video (black, not navy). */
 .dark {
   --background: var(--ink);
-  --foreground: var(--paper);
+  --foreground: #ffffff;
   --card: var(--ink-2);
-  --card-foreground: var(--paper);
+  --card-foreground: #ffffff;
   --popover: var(--ink-2);
-  --popover-foreground: var(--paper);
-  --primary: var(--paper);
-  --primary-foreground: var(--ink);
+  --popover-foreground: #ffffff;
+  --primary: var(--lime);
+  --primary-foreground: var(--navy);
   --secondary: var(--ink-2);
-  --secondary-foreground: var(--paper);
+  --secondary-foreground: #ffffff;
   --muted: var(--ink-2);
-  --muted-foreground: #a9b4bf;
+  --muted-foreground: #a8a8a8;
   --accent: var(--ink-2);
-  --accent-foreground: var(--paper);
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgb(239 236 231 / 14%);
-  --input: rgb(239 236 231 / 22%);
-  --ring: var(--lime);
+  --border: rgb(255 255 255 / 16%);
+  --input: rgb(255 255 255 / 24%);
+  --ring: #ffffff;
   --sidebar: var(--ink);
-  --sidebar-foreground: var(--paper);
-  --sidebar-primary: var(--paper);
-  --sidebar-primary-foreground: var(--ink);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--lime);
+  --sidebar-primary-foreground: var(--navy);
   --sidebar-accent: var(--ink-2);
-  --sidebar-accent-foreground: var(--paper);
-  --sidebar-border: rgb(239 236 231 / 14%);
-  --sidebar-ring: var(--lime);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgb(255 255 255 / 16%);
+  --sidebar-ring: #ffffff;
 }
 
 @layer base {

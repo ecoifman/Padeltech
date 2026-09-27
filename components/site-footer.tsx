@@ -10,11 +10,11 @@ export function SiteFooter({ locale, t }: { locale: Locale; t: Copy }) {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="dark bg-background text-foreground">
+    <footer className="border-t border-border bg-background text-foreground">
       <Container className="flex flex-col gap-12 py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.2fr_2fr]">
           <div className="flex max-w-sm flex-col gap-5">
-            <Logo inverted />
+            <Logo />
             <p className="type-body text-muted-foreground">{t.v2.hero.body}</p>
           </div>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">

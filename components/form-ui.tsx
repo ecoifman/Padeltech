@@ -22,7 +22,7 @@ export function FormSuccess({
     <p
       role="status"
       aria-live="polite"
-      className={cn("type-lead border-s-2 border-lime ps-5", className)}
+      className={cn("type-lead border-s-2 border-foreground ps-5", className)}
     >
       {message}
     </p>
@@ -52,7 +52,7 @@ export function ConsentRow({
         type="checkbox"
         checked={checked}
         onChange={(event) => onChange(event.target.checked)}
-        className="mt-0.5 size-5 shrink-0 accent-ink dark:accent-lime"
+        className="mt-0.5 size-5 shrink-0 accent-navy"
       />
       <span>{label}</span>
     </label>

@@ -9,6 +9,9 @@ alwaysApply: false
 Look: quiet, architectural, premium club. Deep navy and warm paper, generous space,
 sharp corners, one lime accent. Think gallery signage, not sports-store banner.
 
+## Palette (v2)
+White page (#FFFFFF), black type (#0A0A0A), grey hairlines (#E6E6E6). The logo colours appear on buttons only: navy #0E2238 for default buttons, lime #C3E64E with navy text for the one primary action. Photo and video sections use a black overlay. The token block below is the v1 reference; app/globals.css is the source of truth.
+
 ## Minimal by default
 One light background with hairline dividers; at most one dark (navy) block per page. No frames or fills around cards. Fewer images, each one earning its place. One primary button per screen; secondary actions are text links.
 

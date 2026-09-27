@@ -86,7 +86,7 @@ export default async function MunicipalitiesPage({ params }: Props) {
             <SectionHeader title={m.tenderTitle} />
             <ul className="mt-8 flex flex-col gap-3">
               {m.tender.map((item) => (
-                <li key={item} className="type-body border-s-2 border-lime ps-4">
+                <li key={item} className="type-body border-s-2 border-foreground ps-4">
                   {item}
                 </li>
               ))}

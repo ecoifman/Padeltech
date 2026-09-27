@@ -19,7 +19,7 @@ export function HomeStandard({ t }: { t: Copy }) {
             className="grid gap-2 border-b border-border py-8 md:grid-cols-[10rem_15rem_1fr] md:gap-8"
           >
             <p className="type-eyebrow md:pt-1.5">{item.label}</p>
-            <p dir="ltr" className="type-number type-h3 text-lime rtl:text-end md:rtl:text-start">
+            <p dir="ltr" className="type-number type-h3 rtl:text-end md:rtl:text-start">
               <bdi>{item.value}</bdi>
             </p>
             <p className="type-body max-w-xl text-muted-foreground">{item.body}</p>

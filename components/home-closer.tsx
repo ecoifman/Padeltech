@@ -17,7 +17,7 @@ export function HomeCloser({ t }: { t: Copy }) {
       <Container className="relative z-10 flex min-h-[48svh] flex-col justify-end py-16 md:min-h-[60svh] md:py-24">
         <p className="type-h1 max-w-3xl">
           {t.closer.title}
-          <span className="block text-lime">{t.closer.titleLine2}</span>
+          <span className="block">{t.closer.titleLine2}</span>
         </p>
       </Container>
     </section>

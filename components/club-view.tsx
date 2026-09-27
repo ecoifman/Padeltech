@@ -20,7 +20,7 @@ export function ClubView({
     <article>
       <header className="dark bg-background py-20 text-foreground md:py-28">
         <Container className="flex flex-col gap-4">
-          <p className="type-eyebrow text-lime">
+          <p className="type-eyebrow">
             {club.status === "active" ? t.clubsPage.statusActive : t.clubsPage.statusComing}
           </p>
           <h1 className="type-h1 max-w-3xl">{club.name}</h1>

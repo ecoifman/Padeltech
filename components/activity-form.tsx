@@ -156,7 +156,7 @@ export function ActivityForm({
                 value={item}
                 checked={interest === item}
                 onChange={() => setInterest(item)}
-                className="size-5 accent-ink dark:accent-lime"
+                className="size-5 accent-navy"
               />
               {t.interests[item]}
             </label>

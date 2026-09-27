@@ -55,7 +55,7 @@ export default async function WellnessPage({
       <section className="dark bg-background py-16 text-foreground md:py-24 lg:py-32">
         <Container className="grid gap-12 md:grid-cols-3">
           {ideas.map((item) => (
-            <div key={item.title} className="border-s-2 border-lime ps-5 md:ps-8">
+            <div key={item.title} className="border-s-2 border-foreground ps-5 md:ps-8">
               <h2 className="type-h3">{item.title}</h2>
               <p className="type-body mt-3 text-muted-foreground">
                 {item.body}
