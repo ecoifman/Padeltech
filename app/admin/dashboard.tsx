@@ -28,6 +28,7 @@ const typeLabel: Record<InquiryType, string> = {
   activity: "פעילות",
   groups: "קבוצות",
   property: "נכסים",
+  business: "עסקים",
 }
 
 const statusLabel: Record<InquiryStatus, string> = {
@@ -178,7 +179,7 @@ export function AdminDashboard({ items }: { items: Inquiry[] }) {
                 </TableCell>
                 <TableCell className="align-top">
                   <div>{item.region || "—"}</div>
-                  <div>{item.interest || item.propertyLocation || "—"}</div>
+                  <div>{item.audience || item.interest || item.propertyLocation || "—"}</div>
                 </TableCell>
                 <TableCell className="align-top">
                   <select

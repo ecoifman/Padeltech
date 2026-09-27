@@ -1,9 +1,11 @@
 import {
   isActivityInterest,
+  isAudience,
   isInquiryType,
   isPropertyKind,
   isRegion,
   type ActivityInterest,
+  type Audience,
   type InquiryType,
   type PropertyKind,
   type Region,
@@ -31,6 +33,8 @@ export type ParsedInquiry = {
   propertyHeight?: string
   propertyDescription?: string
   propertyLink?: string
+  audience?: Audience | ""
+  role?: string
 }
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
@@ -74,6 +78,9 @@ export function parseInquiryPayload(body: unknown):
     fields.propertyKind = "invalid"
   }
 
+  const audienceRaw = asString(input.audience, 32)
+  if (audienceRaw && !isAudience(audienceRaw)) fields.audience = "invalid"
+
   if (Object.keys(fields).length > 0) {
     return { ok: false, fields, error: "invalid" }
   }
@@ -100,6 +107,8 @@ export function parseInquiryPayload(body: unknown):
       propertyHeight: asString(input.propertyHeight, 80) || undefined,
       propertyDescription: asString(input.propertyDescription, 4000) || undefined,
       propertyLink: asString(input.propertyLink, 500) || undefined,
+      audience: audienceRaw ? (audienceRaw as Audience) : "",
+      role: asString(input.role, 120) || undefined,
     },
   }
 }

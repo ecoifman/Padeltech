@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { Section, SectionHeader } from "@/components/brand/section"
-import { HomeStandard } from "@/components/home-standard"
 import { PropertyForm } from "@/components/property-form"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
@@ -16,7 +15,7 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {}
   const t = getCopy(locale)
   return {
-    title: `${t.nav.partners} — ${t.hero.brand}`,
+    title: `${t.nav.developers} — ${t.hero.brand}`,
     description: t.partnersPage.body,
   }
 }
@@ -37,7 +36,7 @@ export default async function PartnersPage({
           <div>
             <SectionHeader
               as="h1"
-              eyebrow={t.nav.partners}
+              eyebrow={t.v2.developers.eyebrow}
               title={t.partnersPage.title}
               titleLine2={t.partnersPage.titleLine2}
               lead={t.partnersPage.body}
@@ -57,7 +56,17 @@ export default async function PartnersPage({
           <PropertyForm t={t} source="partners" />
         </div>
       </Section>
-      <HomeStandard t={t} />
+      <Section className="border-t border-border bg-card">
+        <SectionHeader title={t.v2.developers.needsTitle} />
+        <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          {t.v2.developers.needs.map((item) => (
+            <li key={item.title} className="border-t border-border pt-6">
+              <h3 className="type-h3">{item.title}</h3>
+              <p className="type-small mt-3 text-muted-foreground">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
     </>
   )
 }

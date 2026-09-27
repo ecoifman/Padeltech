@@ -66,7 +66,7 @@ export function SiteHeader({
           <Logo inverted={home} />
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex" aria-label={t.nav.main}>
+        <nav className="hidden items-center gap-5 xl:flex" aria-label={t.nav.main}>
           {items.map((item) => {
             const active = pathname.startsWith(item.href)
             return (

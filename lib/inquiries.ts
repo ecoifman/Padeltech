@@ -32,6 +32,8 @@ export type Inquiry = {
   propertyHeight?: string
   propertyDescription?: string
   propertyLink?: string
+  audience?: string
+  role?: string
 }
 
 const dataDir = path.join(process.cwd(), "data")
@@ -117,6 +119,8 @@ export function toCsv(items: Inquiry[]) {
     "wantsReply",
     "marketingConsent",
     "organization",
+    "role",
+    "audience",
     "participants",
     "preferredDate",
     "propertyLocation",

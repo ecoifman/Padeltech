@@ -19,7 +19,7 @@ export function HomeCourts({ locale, t }: { locale: Locale; t: Copy }) {
         ))}
       </ul>
       <Link
-        href={`${localePath(locale, "/partners")}#standard`}
+        href={localePath(locale, "/court")}
         className="type-small mt-12 inline-flex min-h-11 items-center gap-2 underline-offset-8 hover:underline"
       >
         {t.courts.more}

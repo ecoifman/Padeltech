@@ -27,11 +27,6 @@ const nextConfig: NextConfig = {
         destination: "/:locale",
         permanent: false,
       },
-      {
-        source: "/:locale(he|en)/contact",
-        destination: "/:locale",
-        permanent: false,
-      },
     ]
   },
 }

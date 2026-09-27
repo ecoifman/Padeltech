@@ -22,7 +22,7 @@ export type Region = (typeof regions)[number]
 export const inquiryStatuses = ["new", "in_progress", "done"] as const
 export type InquiryStatus = (typeof inquiryStatuses)[number]
 
-export const inquiryTypes = ["activity", "groups", "property"] as const
+export const inquiryTypes = ["activity", "groups", "property", "business"] as const
 export type InquiryType = (typeof inquiryTypes)[number]
 
 export function isActivityInterest(value: string): value is ActivityInterest {
@@ -39,6 +39,13 @@ export function isInquiryType(value: string): value is InquiryType {
 
 export function isInquiryStatus(value: string): value is InquiryStatus {
   return inquiryStatuses.includes(value as InquiryStatus)
+}
+
+export const audiences = ["municipal", "developer", "operator", "other"] as const
+export type Audience = (typeof audiences)[number]
+
+export function isAudience(value: string): value is Audience {
+  return audiences.includes(value as Audience)
 }
 
 export const propertyKinds = ["open", "building"] as const
