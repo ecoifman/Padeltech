@@ -95,7 +95,7 @@ A navy section inside a light page = wrap it in `className="dark bg-background t
 so the same components work on both surfaces.
 
 ## Typography
-Font: Heebo, self-hosted (`@fontsource-variable/heebo`), weights 300/400/500 only.
+Font: Heebo, self-hosted (`@fontsource-variable/heebo`), weights 300/400/500 only, for headings, labels, buttons and navigation. Running text (type-lead, type-body) uses Noto Sans Hebrew Light at 75% width (`--font-text`), for a narrow, tall, thin look.
 Headings are light (300–400), never bold. Body 300–400.
 
 ```css

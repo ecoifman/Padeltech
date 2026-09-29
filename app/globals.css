@@ -49,6 +49,8 @@
   --color-line: var(--line);
   --color-stone: var(--stone);
   --font-sans: "Heebo Variable", ui-sans-serif, system-ui, sans-serif;
+  /* Running text: narrow, tall and thin (Noto Sans Hebrew on its width axis). */
+  --font-text: "Noto Sans Hebrew Variable", "Heebo Variable", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -211,12 +213,16 @@
   font-weight: 400;
 }
 @utility type-lead {
-  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  font-family: var(--font-text);
+  font-stretch: 75%;
+  font-size: clamp(1.1875rem, 1.6vw, 1.4375rem);
   line-height: 1.65;
   font-weight: 300;
 }
 @utility type-body {
-  font-size: 1rem;
+  font-family: var(--font-text);
+  font-stretch: 75%;
+  font-size: 1.0625rem;
   line-height: 1.7;
   font-weight: 300;
 }
