@@ -1,7 +1,7 @@
 // Post-process the static export in out/ for uPress (or any static host):
 // root redirect, redirect stubs for retired pages, .htaccess, and a zip.
 import { execSync } from "node:child_process"
-import { mkdirSync, writeFileSync, existsSync, rmSync } from "node:fs"
+import { mkdirSync, writeFileSync, existsSync, rmSync, readdirSync, readFileSync, statSync } from "node:fs"
 import { join } from "node:path"
 
 const out = "out"
@@ -48,6 +48,25 @@ ExpiresByType text/css "access plus 1 year"
 ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 `)
+
+// Drop brand assets that no exported page references (old renders, unused crops).
+const walk = (dir) => readdirSync(dir).flatMap((f) => {
+  const p = join(dir, f)
+  return statSync(p).isDirectory() ? walk(p) : [p]
+})
+const text = walk(out)
+  .filter((p) => /\.(html|txt|js|css|json|xml)$/.test(p))
+  .map((p) => readFileSync(p, "utf8"))
+  .join("\n")
+let removed = 0
+for (const file of walk(join(out, "brand"))) {
+  const url = "/" + file.slice(out.length + 1).split("\\").join("/")
+  if (!text.includes(url) && !text.includes(encodeURI(url))) {
+    rmSync(file)
+    removed++
+  }
+}
+console.log(`Removed ${removed} unused brand files`)
 
 rmSync("padeltech-upress.zip", { force: true })
 execSync(`cd ${out} && zip -qr ../padeltech-upress.zip . -x "*.DS_Store"`)
