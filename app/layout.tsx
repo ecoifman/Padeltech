@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
-import { headers } from "next/headers"
 import "@fontsource-variable/heebo"
 import "@fontsource-variable/noto-sans-hebrew/wdth.css"
 
 import "./globals.css"
-import { dirOf, isLocale } from "@/lib/locales"
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -21,23 +19,23 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const headerList = await headers()
-  const raw = headerList.get("x-locale") ?? "he"
-  const locale = isLocale(raw) ? raw : "he"
-  const dir = dirOf(locale)
-
+  // Static export: every page ships as Hebrew/RTL, and English pages switch
+  // before first paint. LocaleDocument keeps it in sync on client navigation.
   return (
-    <html
-      lang={locale}
-      dir={dir}
-      suppressHydrationWarning
-      className="font-sans antialiased"
-    >
+    <html lang="he" dir="rtl" suppressHydrationWarning className="font-sans antialiased">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if(location.pathname.indexOf('/en')===0){document.documentElement.lang='en';document.documentElement.dir='ltr'}",
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

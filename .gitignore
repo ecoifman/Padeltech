@@ -42,3 +42,7 @@ next-env.d.ts
 # 4K Dropbox master (too large for git; web hero.mp4 is the encode)
 /public/brand/cinema/website-video.mp4
 /public/brand/cinema/website-frames/
+
+# static export
+/out/
+padeltech-upress.zip

@@ -34,7 +34,7 @@ export function BusinessForm({
 }) {
   const f = t.v2.form
   const formId = useId()
-  const { submitting, success, error, fields, submit } = useInquirySubmit()
+  const { submitting, success, via, error, fields, submit } = useInquirySubmit()
   const [name, setName] = useState("")
   const [organization, setOrganization] = useState("")
   const [role, setRole] = useState("")
@@ -51,7 +51,7 @@ export function BusinessForm({
     return t.signup.error
   }
 
-  if (success) return <FormSuccess message={f.success} />
+  if (success) return <FormSuccess message={via === "whatsapp" ? f.successWhatsapp : f.success} />
 
   return (
     <form

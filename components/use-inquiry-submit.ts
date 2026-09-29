@@ -2,41 +2,83 @@
 
 import { useState } from "react"
 
-import type { FieldErrorCode } from "@/lib/validation"
+import { contactChannels } from "@/lib/contact"
+import { parseInquiryPayload, type FieldErrorCode, type ParsedInquiry } from "@/lib/validation"
 
-type Result =
-  | { ok: true }
-  | { ok: false; error: string; fields: Record<string, FieldErrorCode> }
+const LABELS: Record<string, [string, string]> = {
+  name: ["שם", "Name"],
+  role: ["תפקיד", "Role"],
+  organization: ["ארגון", "Organisation"],
+  audience: ["פונה בתור", "Contacting as"],
+  phone: ["טלפון", "Phone"],
+  email: ["דוא״ל", "Email"],
+  propertyLocation: ["אתר", "Site"],
+  message: ["הודעה", "Message"],
+}
 
+/** The lead as a readable WhatsApp message. */
+function whatsappText(data: ParsedInquiry) {
+  const en = document.documentElement.lang === "en"
+  const lines = Object.entries(LABELS)
+    .map(([key, [he, eng]]) => {
+      const value = data[key as keyof ParsedInquiry]
+      return typeof value === "string" && value ? `${en ? eng : he}: ${value}` : ""
+    })
+    .filter(Boolean)
+  const intro = en ? "New enquiry from the PADELTECH website" : "פנייה חדשה מהאתר של PADELTECH"
+  return `${intro}\n\n${lines.join("\n")}`
+}
+
+/**
+ * Static-site lead submission. Validates in the browser, then:
+ * - with NEXT_PUBLIC_LEAD_WEBHOOK_URL set, posts the lead to it (e.g. a Google
+ *   Apps Script that appends to a sheet and emails the owner);
+ * - otherwise opens WhatsApp with the lead written out, so nothing is lost.
+ */
 export function useInquirySubmit() {
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [via, setVia] = useState<"webhook" | "whatsapp">("webhook")
   const [error, setError] = useState("")
   const [fields, setFields] = useState<Record<string, FieldErrorCode>>({})
 
   async function submit(payload: unknown, label: (code: string) => string) {
     if (submitting) return false
-    setSubmitting(true)
     setError("")
     setFields({})
 
-    try {
-      const response = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-      const data = (await response.json().catch(() => ({}))) as Result & {
-        error?: string
-        fields?: Record<string, FieldErrorCode>
-      }
+    const parsed = parseInquiryPayload(payload)
+    if (!parsed.ok) {
+      setFields(parsed.fields)
+      setError(label(parsed.error))
+      return false
+    }
 
-      if (!response.ok) {
-        setFields(data.fields ?? {})
-        setError(label(data.error ?? "error"))
+    const webhook = process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL?.trim()
+    const lead = { ...parsed.data, createdAt: new Date().toISOString(), page: window.location.pathname }
+
+    if (!webhook) {
+      // Must run inside the click, before any await, or the popup is blocked.
+      const { whatsappHref } = contactChannels(whatsappText(parsed.data))
+      if (!whatsappHref) {
+        setError(label("error"))
         return false
       }
+      window.open(whatsappHref, "_blank", "noopener")
+      setVia("whatsapp")
+      setSuccess(true)
+      return true
+    }
 
+    setSubmitting(true)
+    try {
+      // text/plain + no-cors: a "simple" request that Apps Script accepts without CORS.
+      await fetch(webhook, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(lead),
+      })
       setSuccess(true)
       return true
     } catch {
@@ -47,7 +89,7 @@ export function useInquirySubmit() {
     }
   }
 
-  return { submitting, success, error, fields, submit }
+  return { submitting, success, via, error, fields, submit }
 }
 
 export function fieldMessage(
