@@ -2,6 +2,8 @@ import { notFound } from "next/navigation"
 
 import { Section, SectionHeader } from "@/components/brand/section"
 import { BusinessForm } from "@/components/business-form"
+import { ContactChannels } from "@/components/contact-channels"
+import { contactChannels } from "@/lib/contact"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
 import { pageMeta } from "@/lib/page-meta"
@@ -21,7 +23,15 @@ export default async function ContactPage({ params }: Props) {
   return (
     <Section>
       <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-        <SectionHeader as="h1" eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
+        <div>
+          <SectionHeader as="h1" eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
+          {contactChannels().phone || contactChannels().email ? (
+            <div className="mt-10 border-t border-border pt-6">
+              <p className="type-eyebrow">{c.direct}</p>
+              <ContactChannels t={t} className="mt-3" />
+            </div>
+          ) : null}
+        </div>
         <BusinessForm t={t} source="contact" />
       </div>
     </Section>

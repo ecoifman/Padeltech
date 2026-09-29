@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, CalendarDays, Hammer, MapPinned, Trophy } from "lucide-react"
+import { ArrowLeft, Cpu, Factory, Hammer, MapPinned, PencilRuler, Sun } from "lucide-react"
 
 import { BrandImage } from "@/components/brand-image"
 import { Section, SectionHeader } from "@/components/brand/section"
@@ -24,11 +24,42 @@ function Arrow() {
   return <ArrowLeft className="size-4 ltr:-scale-x-100" aria-hidden />
 }
 
-/** Three audience entry points under the hero. */
+const pillarIcons = { solar: Sun, sourcing: Factory, automation: Cpu } as const
+
+/** The three differentiators: solar roof, direct sourcing, automated operation. */
+export function HomePillars({ locale, t }: { locale: Locale; t: Copy }) {
+  const p = t.v2.pillars
+  return (
+    <Section id="pillars">
+      <SectionHeader eyebrow={p.kicker} title={p.title} />
+      <ul className="mt-12 grid gap-x-10 gap-y-12 md:mt-16 md:grid-cols-3">
+        {p.items.map((item) => {
+          const Icon = pillarIcons[item.key as keyof typeof pillarIcons] ?? Sun
+          return (
+            <li key={item.key} className="border-t border-foreground pt-8">
+              <Icon className="size-8 stroke-[1.25]" aria-hidden />
+              <h3 className="type-h2 mt-8">{item.title}</h3>
+              <p className="type-body mt-4 max-w-sm text-muted-foreground">{item.body}</p>
+            </li>
+          )
+        })}
+      </ul>
+      <Link
+        href={localePath(locale, "/solution")}
+        className="type-small mt-12 inline-flex min-h-11 items-center gap-2 font-medium underline-offset-8 hover:underline"
+      >
+        {p.cta}
+        <Arrow />
+      </Link>
+    </Section>
+  )
+}
+
+/** Three audience entry points. */
 export function HomeDoors({ locale, t }: { locale: Locale; t: Copy }) {
   const d = t.v2.doors
   return (
-    <Section id="doors">
+    <Section id="doors" className="border-t border-border">
       <SectionHeader eyebrow={d.kicker} title={d.title} />
       <ul className="mt-12 grid gap-x-8 gap-y-14 md:mt-16 md:grid-cols-3">
         {d.items.map((item) => {
@@ -85,13 +116,13 @@ export function HomeStats({ t }: { t: Copy }) {
   )
 }
 
-const processIcons = [MapPinned, CalendarDays, Hammer, Trophy]
+const processIcons = [MapPinned, PencilRuler, Factory, Hammer]
 
 /** The four-stage delivery process. */
 export function HomeProcess({ t }: { t: Copy }) {
   const p = t.v2.process
   return (
-    <Section id="how">
+    <Section id="how" className="border-t border-border">
       <SectionHeader eyebrow={p.kicker} title={p.title} lead={p.body} />
       <ol className="mt-12 grid sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
         {p.steps.map((step, index) => {

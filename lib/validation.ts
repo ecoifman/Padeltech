@@ -63,6 +63,8 @@ export function parseInquiryPayload(body: unknown):
   const source = asString(input.source, 80) || "site"
 
   if (!isInquiryType(typeRaw)) fields.type = "required"
+  // Business leads are followed up by phone, so the number is required there.
+  if (typeRaw === "business" && !asString(input.phone, 40)) fields.phone = "required"
   if (!name) fields.name = "required"
   if (!email) fields.email = "required"
   else if (!EMAIL.test(email)) fields.email = "invalidEmail"

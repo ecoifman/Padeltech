@@ -3,6 +3,8 @@ import { notFound } from "next/navigation"
 import { BrandImage } from "@/components/brand-image"
 import { Section, SectionHeader } from "@/components/brand/section"
 import { BusinessForm } from "@/components/business-form"
+import { ContactChannels } from "@/components/contact-channels"
+import { FaqList } from "@/components/faq-list"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
 import { pageMeta } from "@/lib/page-meta"
@@ -81,17 +83,31 @@ export default async function MunicipalitiesPage({ params }: Props) {
       </Section>
 
       <Section className="border-t border-border">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-16">
+          <SectionHeader title={m.reportTitle} />
+          <p className="type-lead text-muted-foreground">{m.report}</p>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border">
+        <div className="max-w-3xl">
+          <FaqList title={m.faqTitle} items={m.faq} bare />
+        </div>
+      </Section>
+
+      <Section className="border-t border-border">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <SectionHeader title={m.tenderTitle} />
-            <ul className="mt-8 flex flex-col gap-3">
-              {m.tender.map((item) => (
-                <li key={item} className="type-body border-s-2 border-foreground ps-4">
-                  {item}
+            <SectionHeader title={m.nextTitle} />
+            <ol className="mt-8 flex flex-col gap-6">
+              {m.next.map((item, index) => (
+                <li key={item} className="flex gap-5 border-t border-border pt-5">
+                  <span className="type-eyebrow type-number" dir="ltr">0{index + 1}</span>
+                  <p className="type-body">{item}</p>
                 </li>
               ))}
-            </ul>
-            <p className="type-small mt-6 text-muted-foreground">{m.tenderNote}</p>
+            </ol>
+            <ContactChannels t={t} className="mt-10" />
           </div>
           <div id="contact" className="scroll-mt-24">
             <h2 className="type-h2">{m.formTitle}</h2>

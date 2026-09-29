@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 
 import { requireAdmin } from "@/lib/admin-auth"
 import { createInquiry, listInquiries } from "@/lib/inquiries"
+import { forwardLead } from "@/lib/lead-webhook"
 import { parseInquiryPayload } from "@/lib/validation"
 
 export const runtime = "nodejs"
@@ -22,15 +23,17 @@ export async function POST(request: Request) {
     )
   }
 
-  try {
-    const inquiry = await createInquiry(parsed.data)
-    return NextResponse.json({
-      id: inquiry.id,
-      createdAt: inquiry.createdAt,
-    })
-  } catch {
+  // Store locally when the file system allows it, and forward to the lead
+  // webhook when one is configured. Either one succeeding keeps the lead.
+  const fallback = { id: crypto.randomUUID(), createdAt: new Date().toISOString() }
+  const stored = await createInquiry(parsed.data).catch(() => null)
+  const meta = stored ? { id: stored.id, createdAt: stored.createdAt } : fallback
+  const forwarded = await forwardLead({ ...parsed.data, ...meta })
+
+  if (!stored && !forwarded) {
     return NextResponse.json({ error: "error" }, { status: 500 })
   }
+  return NextResponse.json(meta)
 }
 
 export async function GET() {

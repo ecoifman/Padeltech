@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import { ContactChannels } from "@/components/contact-channels"
 import { Logo } from "@/components/logo"
 import { Container } from "@/components/ui-layout"
 import type { Copy } from "@/lib/copy"
@@ -16,8 +17,9 @@ export function SiteFooter({ locale, t }: { locale: Locale; t: Copy }) {
           <div className="flex max-w-sm flex-col gap-5">
             <Logo />
             <p className="type-body text-muted-foreground">{t.v2.hero.body}</p>
+            <ContactChannels t={t} />
           </div>
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10">
             {footerGroups(locale, t).map((group) => (
               <nav key={group.title} aria-label={group.title} className="flex flex-col gap-3">
                 <p className="type-eyebrow">{group.title}</p>

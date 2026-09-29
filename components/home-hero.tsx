@@ -31,13 +31,13 @@ export function HomeHero({ locale, t }: { locale: Locale; t: Copy }) {
               size="lg"
               variant="accent"
               className="w-full sm:w-auto"
-              render={<Link href={`${localePath(locale)}#doors`} />}
+              render={<Link href={localePath(locale, "/contact")} />}
               nativeButton={false}
             >
               {t.v2.hero.primary}
             </Button>
             <Link
-              href={localePath(locale, "/clubs")}
+              href={localePath(locale, "/solution")}
               className="type-small inline-flex min-h-11 items-center justify-center px-2 text-paper/85 underline-offset-8 hover:underline"
             >
               {t.v2.hero.secondary}

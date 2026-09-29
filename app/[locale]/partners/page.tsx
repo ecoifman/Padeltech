@@ -1,71 +1,44 @@
-import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { Section, SectionHeader } from "@/components/brand/section"
-import { PropertyForm } from "@/components/property-form"
+import { BusinessForm } from "@/components/business-form"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
+import { pageMeta } from "@/lib/page-meta"
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}): Promise<Metadata> {
-  const { locale } = await params
-  if (!isLocale(locale)) return {}
-  const t = getCopy(locale)
-  return {
-    title: `${t.nav.developers} — ${t.hero.brand}`,
-    description: t.partnersPage.body,
-  }
+type Props = { params: Promise<{ locale: string }> }
+
+export function generateMetadata({ params }: Props) {
+  return pageMeta(params, (t) => ({ title: t.nav.developers, description: t.v2.developers.lead }))
 }
 
-export default async function PartnersPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function DevelopersPage({ params }: Props) {
   const { locale } = await params
   if (!isLocale(locale)) notFound()
   const t = getCopy(locale)
+  const d = t.v2.developers
 
   return (
     <>
       <Section>
-        <div className="grid gap-12 md:grid-cols-2 md:items-start md:gap-16">
-          <div>
-            <SectionHeader
-              as="h1"
-              eyebrow={t.v2.developers.eyebrow}
-              title={t.partnersPage.title}
-              titleLine2={t.partnersPage.titleLine2}
-              lead={t.partnersPage.body}
-            />
-            <p className="type-body mt-4 max-w-prose text-muted-foreground">
-              {t.partnersPage.audience}
-            </p>
-            <h2 className="type-h3 mt-12">{t.partnersPage.includeTitle}</h2>
-            <ul className="mt-5 flex flex-col gap-3">
-              {t.partnersPage.include.map((item) => (
-                <li key={item} className="type-body border-s-2 border-foreground ps-4">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <PropertyForm t={t} source="partners" />
-        </div>
+        <SectionHeader as="h1" eyebrow={d.eyebrow} title={d.title} lead={d.lead} />
       </Section>
       <Section className="border-t border-border">
-        <SectionHeader title={t.v2.developers.needsTitle} />
+        <SectionHeader title={d.needsTitle} />
         <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-          {t.v2.developers.needs.map((item) => (
+          {d.needs.map((item) => (
             <li key={item.title} className="border-t border-border pt-6">
               <h3 className="type-h3">{item.title}</h3>
-              <p className="type-small mt-3 text-muted-foreground">{item.body}</p>
+              <p className="type-body mt-3 text-muted-foreground">{item.body}</p>
             </li>
           ))}
         </ul>
+      </Section>
+      <Section id="contact" className="border-t border-border">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <SectionHeader title={d.formTitle} lead={d.formBody} />
+          <BusinessForm t={t} source="developers" audience="developer" />
+        </div>
       </Section>
     </>
   )

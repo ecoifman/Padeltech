@@ -143,10 +143,13 @@ export function BusinessForm({
             name="phone"
             type="tel"
             autoComplete="tel"
+            required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className={fieldControlClass}
+            aria-invalid={Boolean(fields.phone)}
           />
+          <FieldError>{fieldMessage(fields.phone, t.signup)}</FieldError>
         </Field>
       </div>
 

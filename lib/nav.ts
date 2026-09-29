@@ -2,18 +2,18 @@ import type { Copy } from "@/lib/copy"
 import type { Locale } from "@/lib/locales"
 import { localePath } from "@/lib/paths"
 
-/** Main navigation: business audiences first, then proof, then players and company. */
+/** Main navigation: business audiences first, then the solution and the company. */
 export function navItems(locale: Locale, t: Copy) {
   return [
     { href: localePath(locale, "/municipalities"), label: t.nav.municipalities },
     { href: localePath(locale, "/partners"), label: t.nav.developers },
     { href: localePath(locale, "/operators"), label: t.nav.operators },
-    { href: localePath(locale, "/projects"), label: t.nav.projects },
+    { href: localePath(locale, "/solution"), label: t.nav.solution },
     { href: localePath(locale, "/about"), label: t.nav.about },
   ]
 }
 
-/** Footer navigation, grouped by audience. */
+/** Footer navigation. Player pages stay unlinked until a facility opens. */
 export function footerGroups(locale: Locale, t: Copy) {
   return [
     {
@@ -22,17 +22,8 @@ export function footerGroups(locale: Locale, t: Copy) {
         { href: localePath(locale, "/municipalities"), label: t.nav.municipalities },
         { href: localePath(locale, "/partners"), label: t.nav.developers },
         { href: localePath(locale, "/operators"), label: t.nav.operators },
-        { href: localePath(locale, "/projects"), label: t.nav.projects },
+        { href: localePath(locale, "/solution"), label: t.nav.solution },
         { href: localePath(locale, "/court"), label: t.nav.court },
-      ],
-    },
-    {
-      title: t.nav.players,
-      links: [
-        { href: localePath(locale, "/clubs"), label: t.nav.clubs },
-        { href: localePath(locale, "/padel"), label: t.nav.padel },
-        { href: localePath(locale, "/wellness"), label: t.nav.wellness },
-        { href: localePath(locale, "/groups"), label: t.nav.groups },
       ],
     },
     {

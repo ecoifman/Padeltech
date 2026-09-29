@@ -26,7 +26,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-20 bg-background py-20 text-foreground md:py-28 lg:py-40",
+        "scroll-mt-20 bg-background py-16 text-foreground md:py-24 lg:py-28",
         tone === "dark" && "dark",
         className
       )}

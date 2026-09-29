@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 
-import { BrandImage } from "@/components/brand-image"
 import { Section, SectionHeader } from "@/components/brand/section"
+import { ContactChannels } from "@/components/contact-channels"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
 import { pageMeta } from "@/lib/page-meta"
@@ -20,24 +20,17 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
-      <Section tone="dark">
+      <Section>
         <SectionHeader as="h1" eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
       </Section>
-      <BrandImage
-        src="/brand/cinema/closer-evening.jpg"
-        alt=""
-        simLabel={t.sim}
-        className="aspect-[16/10] md:aspect-[21/9]"
-        sizes="100vw"
-      />
-      <Section>
+      <Section className="border-t border-border">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <p className="type-lead max-w-prose">{a.body}</p>
           <div>
-            <h2 className="type-h3">{a.teamTitle}</h2>
-            <p className="type-body mt-4 border border-dashed border-border p-6 text-muted-foreground">
-              {a.teamPending}
-            </p>
+            <h2 className="type-eyebrow">{a.founderTitle}</h2>
+            <p className="type-h3 mt-4">{a.founderName}</p>
+            <p className="type-body mt-3 max-w-prose text-muted-foreground">{a.founderBody}</p>
+            <ContactChannels t={t} className="mt-8" />
           </div>
         </div>
       </Section>
