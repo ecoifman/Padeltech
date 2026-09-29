@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, Cpu, Factory, Hammer, MapPinned, PencilRuler, Sun } from "lucide-react"
+import { ArrowLeft, Cpu, Factory, Hammer, MapPinned, PencilRuler, Workflow } from "lucide-react"
 
 import { BrandImage } from "@/components/brand-image"
 import { Section, SectionHeader } from "@/components/brand/section"
@@ -24,9 +24,9 @@ function Arrow() {
   return <ArrowLeft className="size-4 ltr:-scale-x-100" aria-hidden />
 }
 
-const pillarIcons = { solar: Sun, sourcing: Factory, automation: Cpu } as const
+const pillarIcons = { integration: Workflow, sourcing: Factory, automation: Cpu } as const
 
-/** The three differentiators: solar roof, direct sourcing, automated operation. */
+/** The three differentiators: end-to-end integration, direct sourcing, automated operation. */
 export function HomePillars({ locale, t }: { locale: Locale; t: Copy }) {
   const p = t.v2.pillars
   return (
@@ -34,7 +34,7 @@ export function HomePillars({ locale, t }: { locale: Locale; t: Copy }) {
       <SectionHeader eyebrow={p.kicker} title={p.title} />
       <ul className="mt-12 grid gap-x-10 gap-y-12 md:mt-16 md:grid-cols-3">
         {p.items.map((item) => {
-          const Icon = pillarIcons[item.key as keyof typeof pillarIcons] ?? Sun
+          const Icon = pillarIcons[item.key as keyof typeof pillarIcons] ?? Workflow
           return (
             <li key={item.key} className="border-t border-foreground pt-8">
               <Icon className="size-8 stroke-[1.25]" aria-hidden />

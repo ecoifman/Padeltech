@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Cpu, Factory, Sun } from "lucide-react"
+import { Cpu, Factory, Sun, Workflow } from "lucide-react"
 
 import { Section, SectionHeader } from "@/components/brand/section"
 import { Button } from "@/components/ui/button"
@@ -11,7 +11,7 @@ import { localePath } from "@/lib/paths"
 
 type Props = { params: Promise<{ locale: string }> }
 
-const icons = { solar: Sun, sourcing: Factory, automation: Cpu } as const
+const icons = { integration: Workflow, sourcing: Factory, automation: Cpu, solar: Sun } as const
 
 export function generateMetadata({ params }: Props) {
   return pageMeta(params, (t) => ({ title: t.nav.solution, description: t.v2.solution.lead }))
@@ -30,7 +30,7 @@ export default async function SolutionPage({ params }: Props) {
       </Section>
 
       {s.sections.map((section) => {
-        const Icon = icons[section.key as keyof typeof icons] ?? Sun
+        const Icon = icons[section.key as keyof typeof icons] ?? Workflow
         return (
           <Section key={section.key} id={section.key} className="border-t border-border">
             <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
@@ -39,7 +39,7 @@ export default async function SolutionPage({ params }: Props) {
                   <span className="type-eyebrow type-number" dir="ltr">{section.kicker}</span>
                   <Icon className="size-7 stroke-[1.25]" aria-hidden />
                 </div>
-                <h2 className="type-h1 mt-6">{section.title}</h2>
+                <h2 className={section.key === "solar" ? "type-h2 mt-6" : "type-h1 mt-6"}>{section.title}</h2>
                 <p className="type-lead mt-5 max-w-md text-muted-foreground">{section.lead}</p>
               </div>
               <div>

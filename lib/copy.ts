@@ -10,7 +10,7 @@ const he = {
   meta: {
     title: "PADELTECH ישראל — מתחמי פאדל לרשויות וליזמים",
     description:
-      "מתחמי פאדל עם גג סולארי, רכש ישיר מהיצרן ותפעול אוטומטי. תכנון, הקמה והפעלה לרשויות, ליזמים ולמפעילים.",
+      "תכנון, הקמה והפעלה של מתחמי פאדל לרשויות, ליזמים ולמפעילים: ניהול פרויקט מלא, רכש ישיר מהיצרן ותפעול אוטומטי.",
   },
   nav: {
     municipalities: "לרשויות",
@@ -48,7 +48,7 @@ const he = {
     brand: "PADELTECH",
     eyebrow: "PADELTECH ישראל",
     title: "באים לשחק.",
-    body: "PADELTECH ישראל מתכננת, מקימה ומפעילה מתחמי פאדל עם גג סולארי ותפעול אוטומטי.",
+    body: "PADELTECH ישראל מתכננת, מקימה ומפעילה מתחמי פאדל לרשויות וליזמים.",
   },
   line: "זה לא המקום שבו שוכרים מגרש. זה המקום שבאים אליו לשחק.",
   experience: {
@@ -250,7 +250,7 @@ const he = {
   storyPage: {
     title: "יותר ממשחק. מקום להשתייך אליו.",
     body: "זה לא המקום שבו שוכרים מגרש. זה המקום שבאים אליו לשחק.",
-    more: "PADELTECH ישראל בונה מתחמי פאדל במידות FIP, עם גג סולארי ותפעול אוטומטי. המתחם בנוי סביב מה שקורה לפני המשחק, במהלכו ואחריו.",
+    more: "PADELTECH ישראל בונה מתחמי פאדל במידות FIP, עם תפעול אוטומטי. המתחם בנוי סביב מה שקורה לפני המשחק, במהלכו ואחריו.",
     principles: "לשחק · להתחבר · מועדון · קהילה · ציוד",
   },
   groupsPage: {
@@ -394,19 +394,19 @@ const he = {
   v2: {
     hero: {
       eyebrow: "PADELTECH ישראל",
-      title: "מתחמי פאדל שמייצרים חשמל ומנהלים את עצמם.",
-      body: "גג סולארי, רכש ישיר מהיצרן ותפעול אוטומטי. אנחנו מתכננים, מקימים ומפעילים מתחמי פאדל לרשויות וליזמים.",
+      title: "מתחמי פאדל לרשויות וליזמים, מהמפעל ועד המגרש.",
+      body: "אנחנו מתכננים, מקימים ומפעילים מתחמי פאדל: ניהול פרויקט מלא, רכש ישיר מהיצרן ותפעול אוטומטי.",
       primary: "בדיקת התאמה לשטח שלכם",
       secondary: "איך זה עובד",
     },
     pillars: {
       kicker: "מה אנחנו עושים אחרת",
-      title: "שלושה דברים שאין במתחם רגיל.",
+      title: "הדרך הקצרה למגרש פעיל.",
       items: [
         {
-          key: "solar",
-          title: "גג סולארי",
-          body: "קירוי שמגן על המגרשים משמש ומגשם, ומייצר חשמל. ההכנסה מהחשמל מקזזת חלק מעלות המתחם, ומשחקים בו גם באוגוסט.",
+          key: "integration",
+          title: "גורם אחד מקצה לקצה",
+          body: "תכנון, אישורים, רכש, התקנה והפעלה, בניהול של גורם אחד. בלי לחבר חמישה ספקים ובלי שאלות של מי האחריות.",
         },
         {
           key: "sourcing",
@@ -434,13 +434,13 @@ const he = {
         {
           key: "developers",
           title: "יזמים ובעלי נכסים",
-          body: "גג, חניון או שטח פנוי? נבדוק כמה מגרשים נכנסים ואיך הם מחזירים את עצמם.",
+          body: "יש לכם שטח או מבנה? נבדוק כמה מגרשים נכנסים ואיך הם מחזירים את עצמם.",
           cta: "בדיקת התאמה",
         },
         {
           key: "operators",
           title: "מפעילים ומועדונים",
-          body: "מגרשים ישירות מהיצרן, גג סולארי ומערכת תפעול למועדון קיים או חדש.",
+          body: "מגרשים ישירות מהיצרן ומערכת תפעול, למועדון קיים או חדש.",
           cta: "מה אנחנו מספקים",
         },
       ],
@@ -460,8 +460,8 @@ const he = {
       title: "מהשטח ועד המשחק הראשון.",
       body: "גורם אחד מנהל את כל הפרויקט. משך כל שלב תלוי באתר ובאישורים.",
       steps: [
-        { label: "01", title: "בדיקת התאמה", body: "שטח, גובה, ייעוד, חניה וקהל. כמה מגרשים נכנסים, איזה מודל מתאים והאם הגג יכול לשאת מערכת סולארית." },
-        { label: "02", title: "תכנון ואישורים", body: "תכנון המתחם והגג הסולארי, אקוסטיקה ותאורה, והגשה לוועדות." },
+        { label: "01", title: "בדיקת התאמה", body: "שטח, גובה, ייעוד, חניה וקהל. כמה מגרשים נכנסים, ואיזה מודל מתאים." },
+        { label: "02", title: "תכנון ואישורים", body: "תכנון המתחם, אקוסטיקה ותאורה, והגשה לוועדות." },
         { label: "03", title: "ייצור ובדיקה", body: "הזמנה ישירה מהיצרן, בדיקת איכות במפעל לפני משלוח, יבוא ושילוח." },
         { label: "04", title: "הקמה והפעלה", body: "התקנה, חיבור מערכת התפעול, פתיחה, תחזוקה ודיווח שוטף." },
       ],
@@ -473,26 +473,27 @@ const he = {
       cta: "המתחמים",
     },
     closer: {
-      title: "יש לכם שטח, גג או מכרז?",
-      body: "שלחו מיקום, ונחזור אליכם עם בדיקת התאמה: כמה מגרשים, איזה מודל, והאם יש מקום לגג סולארי.",
+      title: "יש לכם שטח, מבנה או מכרז?",
+      body: "שלחו מיקום, ונחזור אליכם עם בדיקת התאמה: כמה מגרשים נכנסים ואיזה מודל מתאים.",
       cta: "בדיקת התאמה לשטח שלכם",
     },
     solution: {
       eyebrow: "הפתרון",
       title: "מתחם פאדל שמחזיק את עצמו.",
-      lead: "רוב מתחמי הפאדל נבנים כמו לפני עשר שנים: מגרש פתוח, צוות בכל משמרת ומגרשים שנקנים דרך כמה מתווכים. אנחנו בונים אחרת, בשלוש שכבות.",
+      lead: "רוב מתחמי הפאדל נבנים דרך כמה ספקים ומתווכים, ומופעלים עם צוות בכל משמרת. אצלנו גורם אחד מנהל את הפרויקט, המגרשים מגיעים ישירות מהיצרן, והמתחם מופעל במערכת אוטומטית.",
       sections: [
         {
-          key: "solar",
+          key: "integration",
           kicker: "01",
-          title: "גג סולארי",
-          lead: "מבנה קירוי מעל המגרשים, עם פאנלים סולאריים על הגג.",
+          title: "גורם אחד מקצה לקצה",
+          lead: "אנחנו מנהלים את כל הפרויקט, מהבדיקה הראשונה ועד שהמתחם פועל.",
           points: [
-            { title: "חשמל", body: "המערכת מייצרת חשמל לצריכת המתחם, למכירה לרשת או לקיזוז מול מבני ציבור סמוכים." },
-            { title: "יותר שעות משחק", body: "הגג מגן משמש, מחום ומגשם, כך שהמגרש עובד בקיץ ובחורף." },
-            { title: "פחות סנוור", body: "צל אחיד על המגרש, בלי שמש בעיניים בשעות אחר הצהריים." },
+            { title: "בדיקה ותכנון", body: "בדיקת התאמה, תכנון המתחם, אקוסטיקה ותאורה." },
+            { title: "אישורים", body: "הכנת התיק והגשה לוועדות, מול הרשות והיועצים." },
+            { title: "ביצוע", body: "תיאום בין היצרן, הקבלנים והמתקינים, לפי לוח זמנים אחד." },
+            { title: "מסירה והפעלה", body: "בדיקה לפני פתיחה, הפעלה, תחזוקה ודיווח." },
           ],
-          note: "היקף הייצור וההכנסה תלויים בגודל הגג, בכיוון ובהסדר מול חברת החשמל. אנחנו מחשבים אותם בבדיקת ההתאמה.",
+          note: "כתובת אחת לכל שאלה, ואחריות אחת על התוצאה.",
         },
         {
           key: "sourcing",
@@ -520,6 +521,18 @@ const he = {
           ],
           note: "הנחת תושב, שעות לציבור ומחיר מפוקח מוגדרים במערכת ונאכפים אוטומטית.",
         },
+        {
+          key: "solar",
+          kicker: "אפשרות",
+          title: "וגם: גג סולארי",
+          lead: "מבנה קירוי מעל המגרשים, עם פאנלים סולאריים על הגג.",
+          points: [
+            { title: "חשמל", body: "המערכת מייצרת חשמל לצריכת המתחם, למכירה לרשת או לקיזוז מול מבני ציבור סמוכים." },
+            { title: "יותר שעות משחק", body: "הגג מגן משמש, מחום ומגשם, כך שהמגרש עובד בקיץ ובחורף." },
+            { title: "פחות סנוור", body: "צל אחיד על המגרש, בלי שמש בעיניים בשעות אחר הצהריים." },
+          ],
+          note: "היקף הייצור וההכנסה תלויים בגודל הגג, בכיוון ובהסדר מול חברת החשמל. אנחנו מחשבים אותם בבדיקת ההתאמה.",
+        },
       ],
       closerTitle: "רוצים לדעת אם זה מתאים לשטח שלכם?",
       closerBody: "שלחו מיקום, ונחזור אליכם עם בדיקת התאמה.",
@@ -527,7 +540,7 @@ const he = {
     municipalities: {
       eyebrow: "לרשויות מקומיות",
       title: "מתחם פאדל לתושבים, בלי תקציב הקמה.",
-      lead: "אנחנו מתכננים, מקימים ומפעילים את המתחם, עם גג סולארי ותפעול אוטומטי. הרשות שומרת על השליטה בשעות, במחירים ובנגישות לתושבים.",
+      lead: "אנחנו מתכננים, מקימים ומפעילים את המתחם, עם רכש ישיר מהיצרן ותפעול אוטומטי. הרשות שומרת על השליטה בשעות, במחירים ובנגישות לתושבים.",
       modelsTitle: "מודלים לשיתוף פעולה",
       modelsNote: "המודל המדויק נקבע לכל רשות ולכל אתר.",
       models: [
@@ -545,21 +558,21 @@ const he = {
         { title: "מחיר מפוקח", body: "מחיר מקסימלי לשעת מגרש, כפי שנקבע בהסכם." },
       ],
       neighboursTitle: "רעש, תאורה ושכנים",
-      neighbours: "תכנון אקוסטי, תאורה מכוונת שנדלקת רק בשעות שהוזמנו, ושעות פעילות שמותאמות לשכונה. הגג הסולארי מסתיר את התאורה מלמעלה. את כל אלה אנחנו פותרים בשלב התכנון, לא אחרי התלונה הראשונה.",
+      neighbours: "תכנון אקוסטי, תאורה מכוונת שנדלקת רק בשעות שהוזמנו, ושעות פעילות שמותאמות לשכונה. את כל אלה אנחנו פותרים בשלב התכנון, לא אחרי התלונה הראשונה.",
       reportTitle: "הרשות רואה הכול",
-      report: "דוח שוטף מתוך מערכת התפעול: תפוסה, הכנסות, שימוש של תושבים, שעות לציבור וייצור החשמל של הגג.",
+      report: "דוח שוטף מתוך מערכת התפעול: תפוסה, הכנסות, שימוש של תושבים, ושעות לציבור.",
       nextTitle: "מה קורה אחרי שפונים",
       next: [
         "שיחה קצרה על השטח, על הצרכים ועל לוחות הזמנים של הרשות.",
-        "בדיקת התאמה: כמה מגרשים נכנסים, איזה מודל מתאים והאם יש מקום לגג סולארי.",
+        "בדיקת התאמה: כמה מגרשים נכנסים, איזה מודל מתאים ומה לוח הזמנים.",
         "הצעה מסודרת, או ליווי בהכנת המפרט אם הרשות יוצאת למכרז.",
       ],
       faqTitle: "שאלות של רשויות",
       faq: [
         { q: "האם הרשות צריכה להשקיע כסף?", a: "בזיכיון ובהקמה בשכירות, לא. אנחנו מממנים את ההקמה ומחזירים את ההשקעה מההפעלה. בשותפות ובהקמה בלבד הרשות משקיעה, בהתאם למודל." },
-        { q: "מה קורה בסוף תקופת הזיכיון?", a: "המתחם חוזר לרשות, כולל המגרשים, הגג והמערכות, לפי מה שנקבע בהסכם." },
+        { q: "מה קורה בסוף תקופת הזיכיון?", a: "המתחם חוזר לרשות, כולל המגרשים והמערכות, לפי מה שנקבע בהסכם." },
         { q: "איך מתחם עובד בלי צוות קבוע?", a: "ההזמנה, התשלום, הכניסה והתאורה מנוהלים במערכת. המתחם מנוטר מרחוק, ויש מענה טלפוני וצוות שמגיע לתחזוקה, לאירועים ולתקלות." },
-        { q: "מה קורה עם החשמל שהגג מייצר?", a: "לפי ההסדר שנבחר: צריכה עצמית של המתחם, מכירה לרשת או קיזוז מול מבני ציבור. את הפירוט אנחנו נותנים בבדיקת ההתאמה." },
+        { q: "אפשר לקרות את המגרשים?", a: "כן. אפשר להוסיף קירוי, גם כגג סולארי שמייצר חשמל ומקזז חלק מעלות המתחם. נבדוק את האפשרות בבדיקת ההתאמה." },
         { q: "אפשר להתחיל קטן?", a: "כן. אפשר להתחיל בשניים–ארבעה מגרשים ולהוסיף מגרשים לפי הביקוש." },
         { q: "מי מתחזק את המגרשים?", a: "אנחנו, בכל המודלים שבהם אנחנו מפעילים. בהקמה בלבד המתחם נמסר עם תוכנית תחזוקה." },
         { q: "כמה זמן לוקחת הקמה?", a: "השלב הארוך הוא בדרך כלל האישורים. ייצור, משלוח והתקנה מתוכננים במקביל, ולוח הזמנים המלא ניתן בבדיקת ההתאמה." },
@@ -569,12 +582,12 @@ const he = {
     },
     operators: {
       eyebrow: "למפעילים ולמועדונים",
-      title: "מגרשים, גג ומערכת תפעול, ממקור אחד.",
-      lead: "למועדון קיים או חדש: מגרשים ישירות מהיצרן עם אחריות בארץ, קירוי סולארי ומערכת שמפעילה את המועדון בלי צוות בכל משמרת.",
+      title: "מגרשים ומערכת תפעול, ממקור אחד.",
+      lead: "למועדון קיים או חדש: מגרשים ישירות מהיצרן עם אחריות בארץ, ומערכת שמפעילה את המועדון בלי צוות בכל משמרת.",
       productsTitle: "מה אנחנו מספקים",
       products: [
         { title: "מגרשים", body: "פנורמיים או קלאסיים, פתוחים או מקורים, במידות FIP. בדיקה במפעל והתקנה בארץ." },
-        { title: "גג סולארי", body: "קירוי למגרשים קיימים או חדשים, עם מערכת סולארית שמייצרת חשמל." },
+        { title: "קירוי", body: "קירוי למגרשים קיימים או חדשים, כולל אפשרות לגג סולארי." },
         { title: "מערכת תפעול", body: "הזמנה ותשלום, כניסה בקוד, תאורה לפי הזמנה וניטור מרחוק." },
         { title: "תחזוקה וחלפים", body: "תחזוקה תקופתית, מלאי חלפים בארץ ומענה לתקלות." },
       ],
@@ -583,8 +596,8 @@ const he = {
     },
     developers: {
       eyebrow: "ליזמים ובעלי נכסים",
-      title: "יש לכם גג, חניון או שטח פנוי?",
-      lead: "מתחם פאדל עם גג סולארי ותפעול אוטומטי יכול להפוך שטח מת לנכס שמכניס. אנחנו בודקים את ההתאמה, מקימים ומפעילים, לבד או איתכם.",
+      title: "יש לכם שטח או מבנה?",
+      lead: "מתחם פאדל עם תפעול אוטומטי יכול להפוך שטח לא מנוצל לנכס שמכניס. אנחנו בודקים את ההתאמה, מקימים ומפעילים, לבד או איתכם.",
       formTitle: "בדיקת התאמה לנכס",
       formBody: "ספרו לנו איפה הנכס ומה הגודל שלו, ונחזור אליכם.",
       needsTitle: "מה צריך כדי שיהיה מתחם",
@@ -611,8 +624,8 @@ const he = {
     about: {
       eyebrow: "אודות",
       title: "חברה ישראלית למתחמי פאדל.",
-      lead: "PADELTECH ישראל מתכננת, מקימה ומפעילה מתחמי פאדל לרשויות, ליזמים ולמפעילים, עם גג סולארי, רכש ישיר מהיצרן ותפעול אוטומטי.",
-      body: "התחלנו מהשאלה איך מתחם פאדל יכול לעבוד גם ביישוב קטן, בלי תקציב גדול ובלי צוות בכל משמרת. התשובה היא לא עוד מועדון, אלא מתחם שמייצר חשמל, נקנה ישירות מהיצרן ומנהל את עצמו.",
+      lead: "PADELTECH ישראל מתכננת, מקימה ומפעילה מתחמי פאדל לרשויות, ליזמים ולמפעילים, עם ניהול פרויקט מלא, רכש ישיר מהיצרן ותפעול אוטומטי.",
+      body: "התחלנו מהשאלה איך מתחם פאדל יכול לעבוד גם ביישוב קטן, בלי תקציב גדול ובלי צוות בכל משמרת. התשובה היא לא עוד מועדון, אלא מתחם שנקנה ישירות מהיצרן, מנוהל על ידי גורם אחד ומפעיל את עצמו.",
       founderTitle: "מי מוביל את PADELTECH ישראל",
       founderName: "אייל, מייסד",
       founderBody: "מהנדס תעשייה וניהול ויזם. מנהל יבוא והפצה של מערכות טכנולוגיות מסין וייצור בתקינה אירופית, ומביא את הניסיון הזה לניהול פרויקטים של פאדל, מהמפעל ועד המגרש.",
@@ -670,7 +683,7 @@ const en: typeof he = {
   meta: {
     title: "PADELTECH Israel — Padel facilities for municipalities and developers",
     description:
-      "Padel facilities with a solar roof, courts direct from the manufacturer and automated operation. Design, build and operation for municipalities, developers and operators.",
+      "Design, build and operation of padel facilities for municipalities, developers and operators: full project management, courts direct from the manufacturer and automated operation.",
   },
   nav: {
     municipalities: "Municipalities",
@@ -708,7 +721,7 @@ const en: typeof he = {
     brand: "PADELTECH",
     eyebrow: "PADELTECH Israel",
     title: "Come to play.",
-    body: "PADELTECH Israel plans, builds and operates padel facilities with a solar roof and automated operation.",
+    body: "PADELTECH Israel plans, builds and operates padel facilities for municipalities and developers.",
   },
   line: "Not where you rent a court. Where you come to play.",
   experience: {
@@ -910,7 +923,7 @@ const en: typeof he = {
   storyPage: {
     title: "More than a game. A place to belong.",
     body: "Not where you rent a court. Where you come to play.",
-    more: "PADELTECH Israel builds padel facilities to FIP dimensions, with a solar roof and automated operation. Each facility is designed around what happens before, during and after the game.",
+    more: "PADELTECH Israel builds padel facilities to FIP dimensions, with automated operation. Each facility is designed around what happens before, during and after the game.",
     principles: "Play · Connect · Club · Community · Gear",
   },
   groupsPage: {
@@ -1054,19 +1067,19 @@ const en: typeof he = {
   v2: {
     hero: {
       eyebrow: "PADELTECH Israel",
-      title: "Padel facilities that make their own power and run themselves.",
-      body: "A solar roof, courts bought direct from the manufacturer, and automated operation. We plan, build and operate padel facilities for municipalities and developers.",
+      title: "Padel facilities for municipalities and developers, from factory to court.",
+      body: "We plan, build and operate padel facilities: full project management, courts direct from the manufacturer, and automated operation.",
       primary: "Check your site",
       secondary: "How it works",
     },
     pillars: {
       kicker: "What we do differently",
-      title: "Three things a standard facility doesn't have.",
+      title: "The short way to a working court.",
       items: [
         {
-          key: "solar",
-          title: "A solar roof",
-          body: "A canopy that shelters the courts from sun and rain and generates electricity. The power income offsets part of the facility's cost, and you can play in August.",
+          key: "integration",
+          title: "One party, end to end",
+          body: "Design, permits, sourcing, installation and operation, managed by one party. No juggling five suppliers, no question of who is responsible.",
         },
         {
           key: "sourcing",
@@ -1094,13 +1107,13 @@ const en: typeof he = {
         {
           key: "developers",
           title: "Developers and property owners",
-          body: "A roof, a car park or an empty plot? We will check how many courts fit and how they pay back.",
+          body: "Have a plot or a building? We will check how many courts fit and how they pay back.",
           cta: "Site check",
         },
         {
           key: "operators",
           title: "Operators and clubs",
-          body: "Courts direct from the manufacturer, a solar roof and an operating system for a new or existing club.",
+          body: "Courts direct from the manufacturer and an operating system, for a new or existing club.",
           cta: "What we supply",
         },
       ],
@@ -1120,8 +1133,8 @@ const en: typeof he = {
       title: "From the site to the first match.",
       body: "One party runs the whole project. Each stage takes as long as the site and the permits require.",
       steps: [
-        { label: "01", title: "Site check", body: "Area, height, zoning, parking and demand. How many courts fit, which model suits, and whether the roof can carry solar." },
-        { label: "02", title: "Design and permits", body: "Site and solar-roof design, acoustics and lighting, and submission to the planning committees." },
+        { label: "01", title: "Site check", body: "Area, height, zoning, parking and demand. How many courts fit, and which model suits." },
+        { label: "02", title: "Design and permits", body: "Site design, acoustics and lighting, and submission to the planning committees." },
         { label: "03", title: "Manufacture and inspection", body: "Direct order from the manufacturer, factory inspection before shipping, import and freight." },
         { label: "04", title: "Build and operate", body: "Installation, connecting the operating system, opening, maintenance and regular reporting." },
       ],
@@ -1133,26 +1146,27 @@ const en: typeof he = {
       cta: "Facilities",
     },
     closer: {
-      title: "Have a site, a roof or a tender?",
-      body: "Send us the location and we will come back with a site check: how many courts, which model, and whether there is room for a solar roof.",
+      title: "Have a site, a building or a tender?",
+      body: "Send us the location and we will come back with a site check: how many courts fit and which model suits.",
       cta: "Check your site",
     },
     solution: {
       eyebrow: "The solution",
       title: "A padel facility that carries itself.",
-      lead: "Most padel facilities are still built the way they were ten years ago: open courts, staff on every shift, and courts bought through several middlemen. We build differently, in three layers.",
+      lead: "Most padel facilities are built through several suppliers and middlemen, and run with staff on every shift. With us, one party manages the project, the courts come direct from the manufacturer, and the facility runs on an automated system.",
       sections: [
         {
-          key: "solar",
+          key: "integration",
           kicker: "01",
-          title: "A solar roof",
-          lead: "A canopy over the courts, with solar panels on top.",
+          title: "One party, end to end",
+          lead: "We manage the whole project, from the first site check until the facility is running.",
           points: [
-            { title: "Power", body: "The system generates electricity for the facility, for sale to the grid, or to offset nearby public buildings." },
-            { title: "More playing hours", body: "The roof shelters the courts from sun, heat and rain, so they work in summer and winter." },
-            { title: "Less glare", body: "Even shade across the court, with no sun in the players' eyes in the afternoon." },
+            { title: "Check and design", body: "Site check, facility design, acoustics and lighting." },
+            { title: "Permits", body: "Preparing the file and submitting to the committees, with the municipality and consultants." },
+            { title: "Delivery", body: "Coordinating the manufacturer, contractors and installers on one timeline." },
+            { title: "Handover and operation", body: "Pre-opening inspection, operation, maintenance and reporting." },
           ],
-          note: "Output and income depend on roof size, orientation and the arrangement with the electricity company. We calculate them in the site check.",
+          note: "One address for every question, and one party responsible for the result.",
         },
         {
           key: "sourcing",
@@ -1180,6 +1194,18 @@ const en: typeof he = {
           ],
           note: "Resident discounts, public hours and price caps are set in the system and enforced automatically.",
         },
+        {
+          key: "solar",
+          kicker: "Option",
+          title: "Also: a solar roof",
+          lead: "A canopy over the courts, with solar panels on top.",
+          points: [
+            { title: "Power", body: "The system generates electricity for the facility, for sale to the grid, or to offset nearby public buildings." },
+            { title: "More playing hours", body: "The roof shelters the courts from sun, heat and rain, so they work in summer and winter." },
+            { title: "Less glare", body: "Even shade across the court, with no sun in the players' eyes in the afternoon." },
+          ],
+          note: "Output and income depend on roof size, orientation and the arrangement with the electricity company. We calculate them in the site check.",
+        },
       ],
       closerTitle: "Want to know if it fits your site?",
       closerBody: "Send us the location and we will come back with a site check.",
@@ -1187,7 +1213,7 @@ const en: typeof he = {
     municipalities: {
       eyebrow: "For municipalities",
       title: "A padel facility for residents, with no construction budget.",
-      lead: "We plan, build and operate the facility, with a solar roof and automated operation. The municipality keeps control of hours, prices and access for residents.",
+      lead: "We plan, build and operate the facility, with courts direct from the manufacturer and automated operation. The municipality keeps control of hours, prices and access for residents.",
       modelsTitle: "Partnership models",
       modelsNote: "The exact model is set for each municipality and each site.",
       models: [
@@ -1205,21 +1231,21 @@ const en: typeof he = {
         { title: "Capped price", body: "A maximum court-hour price, as set in the agreement." },
       ],
       neighboursTitle: "Noise, lighting and neighbours",
-      neighbours: "Acoustic design, directed lighting that is on only during booked hours, and opening hours that suit the neighbourhood. The solar roof screens the lights from above. We solve all of this at the design stage, not after the first complaint.",
+      neighbours: "Acoustic design, directed lighting that is on only during booked hours, and opening hours that suit the neighbourhood. We solve all of this at the design stage, not after the first complaint.",
       reportTitle: "The municipality sees everything",
-      report: "A regular report from the operating system: occupancy, revenue, resident use, public hours and the roof's power output.",
+      report: "A regular report from the operating system: occupancy, revenue, resident use and public hours.",
       nextTitle: "What happens after you get in touch",
       next: [
         "A short call about the site, your needs and the municipality's timeline.",
-        "A site check: how many courts fit, which model suits, and whether there is room for a solar roof.",
+        "A site check: how many courts fit, which model suits, and the timeline.",
         "A proposal, or support in drafting the specification if the municipality goes to tender.",
       ],
       faqTitle: "Questions from municipalities",
       faq: [
         { q: "Does the municipality need to invest?", a: "Under a concession or a lease-and-build, no. We fund construction and recover it from operation. In a partnership or build-only model the municipality invests, according to the model." },
-        { q: "What happens at the end of the concession?", a: "The facility returns to the municipality, including the courts, the roof and the systems, as set in the agreement." },
+        { q: "What happens at the end of the concession?", a: "The facility returns to the municipality, including the courts and the systems, as set in the agreement." },
         { q: "How does a facility run without permanent staff?", a: "Booking, payment, entry and lighting are handled by the system. The facility is monitored remotely, with phone support and a team that comes in for maintenance, events and faults." },
-        { q: "What happens to the power the roof generates?", a: "Depending on the arrangement: used by the facility, sold to the grid, or offset against public buildings. We give the details in the site check." },
+        { q: "Can the courts be covered?", a: "Yes. A canopy can be added, including a solar roof that generates electricity and offsets part of the facility's cost. We look at it in the site check." },
         { q: "Can we start small?", a: "Yes. You can start with two to four courts and add more as demand grows." },
         { q: "Who maintains the courts?", a: "We do, in every model where we operate. In build-only, the facility is handed over with a maintenance plan." },
         { q: "How long does it take to build?", a: "Permits are usually the longest stage. Manufacture, shipping and installation are planned in parallel, and the full timeline comes with the site check." },
@@ -1229,12 +1255,12 @@ const en: typeof he = {
     },
     operators: {
       eyebrow: "For operators and clubs",
-      title: "Courts, roof and operating system, from one source.",
-      lead: "For a new or existing club: courts direct from the manufacturer with a warranty in Israel, a solar canopy, and a system that runs the club without staff on every shift.",
+      title: "Courts and an operating system, from one source.",
+      lead: "For a new or existing club: courts direct from the manufacturer with a warranty in Israel, and a system that runs the club without staff on every shift.",
       productsTitle: "What we supply",
       products: [
         { title: "Courts", body: "Panoramic or classic, open or covered, to FIP dimensions. Factory-inspected and installed in Israel." },
-        { title: "Solar roof", body: "A canopy for new or existing courts, with a solar system that generates electricity." },
+        { title: "Canopy", body: "A canopy for new or existing courts, with a solar roof as an option." },
         { title: "Operating system", body: "Booking and payment, code entry, lights on booking and remote monitoring." },
         { title: "Maintenance and spares", body: "Scheduled maintenance, spare parts in Israel and fault response." },
       ],
@@ -1243,8 +1269,8 @@ const en: typeof he = {
     },
     developers: {
       eyebrow: "For developers and property owners",
-      title: "Have a roof, a car park or an empty plot?",
-      lead: "A padel facility with a solar roof and automated operation can turn dead space into an earning asset. We check the fit, build and operate, on our own or with you.",
+      title: "Have a plot or a building?",
+      lead: "A padel facility with automated operation can turn unused space into an earning asset. We check the fit, build and operate, on our own or with you.",
       formTitle: "Site check for your property",
       formBody: "Tell us where the property is and how large it is, and we will get back to you.",
       needsTitle: "What a facility needs",
@@ -1271,8 +1297,8 @@ const en: typeof he = {
     about: {
       eyebrow: "About",
       title: "An Israeli padel facilities company.",
-      lead: "PADELTECH Israel plans, builds and operates padel facilities for municipalities, developers and operators, with a solar roof, courts direct from the manufacturer and automated operation.",
-      body: "We started with one question: how can a padel facility work in a small town, without a big budget and without staff on every shift? The answer is not another club, but a facility that makes its own power, is bought direct from the factory, and runs itself.",
+      lead: "PADELTECH Israel plans, builds and operates padel facilities for municipalities, developers and operators, with full project management, courts direct from the manufacturer and automated operation.",
+      body: "We started with one question: how can a padel facility work in a small town, without a big budget and without staff on every shift? The answer is not another club, but a facility bought direct from the factory, managed by one party, and run by itself.",
       founderTitle: "Who leads PADELTECH Israel",
       founderName: "Eyal, founder",
       founderBody: "Industrial and management engineer and entrepreneur. He runs the import and distribution of technology systems from China and production to European certification, and brings that experience to padel projects, from the factory to the court.",
