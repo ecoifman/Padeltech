@@ -43,9 +43,10 @@ export default async function LocaleLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "PADELTECH Israel",
-              url: process.env.NEXT_PUBLIC_SITE_URL || undefined,
+              url: process.env.NEXT_PUBLIC_SITE_URL || "https://padeltech.co.il",
               description: t.meta.description,
               telephone: "+972542363473",
+              email: "info@padeltech.co.il",
               areaServed: "IL",
             }),
           }}

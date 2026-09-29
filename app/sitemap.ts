@@ -5,7 +5,7 @@ const pages = ["", "/municipalities", "/partners", "/operators", "/court", "/pro
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://padeltech.co.il"
   return pages.map((path) => ({
     url: `${base}/he${path}/`,
     changeFrequency: "monthly",

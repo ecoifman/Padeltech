@@ -6,7 +6,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://127.0.0.1:4321"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://padeltech.co.il"
   ),
   title: "PADELTECH ישראל",
   description:

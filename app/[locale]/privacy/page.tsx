@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { Section, SectionHeader } from "@/components/brand/section"
+import { contactChannels } from "@/lib/contact"
 import { getCopy } from "@/lib/copy"
 import { isLocale } from "@/lib/locales"
 
@@ -24,7 +25,7 @@ export default async function PrivacyPage({
   const { locale } = await params
   if (!isLocale(locale)) notFound()
   const t = getCopy(locale)
-  const email = process.env.NEXT_PUBLIC_PRIVACY_EMAIL?.trim()
+  const email = (process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? contactChannels().email).trim()
 
   return (
     <Section>

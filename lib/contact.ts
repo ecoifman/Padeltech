@@ -3,10 +3,11 @@
  * without a code edit. Anything empty is simply not shown.
  */
 const DEFAULT_PHONE = "054-236-3473"
+const DEFAULT_EMAIL = "info@padeltech.co.il"
 
 export function contactChannels(message?: string) {
   const phone = (process.env.NEXT_PUBLIC_CONTACT_PHONE ?? DEFAULT_PHONE).trim()
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || ""
+  const email = (process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? DEFAULT_EMAIL).trim()
   // International digits for tel: and wa.me links (Israeli 05x → 9725x).
   const digits = phone.replace(/\D/g, "")
   const intl = digits.startsWith("0") ? `972${digits.slice(1)}` : digits
