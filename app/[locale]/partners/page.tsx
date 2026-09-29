@@ -34,6 +34,17 @@ export default async function DevelopersPage({ params }: Props) {
           ))}
         </ul>
       </Section>
+      <Section className="border-t border-border">
+        <SectionHeader title={d.specialTitle} />
+        <ul className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          {d.special.map((item) => (
+            <li key={item.title} className="border-t border-foreground pt-6">
+              <h3 className="type-h3">{item.title}</h3>
+              <p className="type-body mt-3 text-muted-foreground">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
       <Section id="contact" className="border-t border-border">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <SectionHeader title={d.formTitle} lead={d.formBody} />

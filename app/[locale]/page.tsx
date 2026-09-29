@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { HomeHero } from "@/components/home-hero"
+import { HomeWorld } from "@/components/maker"
 import {
   HomeDoors,
   HomeMeeting,
@@ -41,11 +42,12 @@ export default async function HomePage({
   if (!isLocale(locale)) notFound()
   const t = getCopy(locale)
 
-  // v3: what we do differently, who it is for, how it works, then the site check.
+  // v3: what we do differently, the courts worldwide, who it is for, how it works, then the site check.
   return (
     <>
       <HomeHero locale={locale} t={t} />
       <HomePillars locale={locale} t={t} />
+      <HomeWorld locale={locale} t={t} />
       <HomeDoors locale={locale} t={t} />
       <HomeProcess t={t} />
       <HomeMeeting locale={locale} t={t} />

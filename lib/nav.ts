@@ -7,7 +7,8 @@ export function navItems(locale: Locale, t: Copy) {
   return [
     { href: localePath(locale, "/municipalities"), label: t.nav.municipalities },
     { href: localePath(locale, "/partners"), label: t.nav.developers },
-    { href: localePath(locale, "/operators"), label: t.nav.operators },
+    { href: localePath(locale, "/court"), label: t.nav.court },
+    { href: localePath(locale, "/projects"), label: t.nav.projects },
     { href: localePath(locale, "/solution"), label: t.nav.solution },
     { href: localePath(locale, "/about"), label: t.nav.about },
   ]
@@ -24,6 +25,7 @@ export function footerGroups(locale: Locale, t: Copy) {
         { href: localePath(locale, "/operators"), label: t.nav.operators },
         { href: localePath(locale, "/solution"), label: t.nav.solution },
         { href: localePath(locale, "/court"), label: t.nav.court },
+        { href: localePath(locale, "/projects"), label: t.nav.projects },
       ],
     },
     {

@@ -14,10 +14,11 @@ const doorHref = {
   operators: "/operators",
 } as const
 
+/** Manufacturer installations, captioned as such. */
 const doorImage = {
-  municipalities: "/brand/cinema/film-aerial-clean.jpg",
-  developers: "/brand/cinema/cinema-club-arrival.png",
-  operators: "/brand/equipment/01-lineup.jpg",
+  municipalities: { src: "/brand/unipadel/uk-2.jpg", country: "uk" },
+  developers: { src: "/brand/unipadel/maldives-2.jpg", country: "maldives" },
+  operators: { src: "/brand/unipadel/serbia-2.jpg", country: "serbia" },
 } as const
 
 function Arrow() {
@@ -71,8 +72,9 @@ export function HomeDoors({ locale, t }: { locale: Locale; t: Copy }) {
                 className="group flex h-full flex-col"
               >
                 <BrandImage
-                  src={doorImage[key]}
+                  src={doorImage[key].src}
                   alt=""
+                  simLabel={`${t.v2.maker.countries[doorImage[key].country]} · ${t.v2.maker.projectCaption}`}
                   className="aspect-[4/3] transition-opacity group-hover:opacity-90"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
