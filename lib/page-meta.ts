@@ -12,5 +12,14 @@ export async function pageMeta(
   if (!isLocale(locale)) return {}
   const t = getCopy(locale)
   const { title, description } = pick(t)
-  return { title: `${title} — ${t.hero.brand}`, description }
+  return {
+    title: `${title} — ${t.hero.brand}`,
+    description,
+    openGraph: {
+      title: `${title} — ${t.hero.brand}`,
+      description,
+      locale: locale === "he" ? "he_IL" : "en_US",
+      images: ["/brand/unipadel/serbia-1.jpg"],
+    },
+  }
 }

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   ),
   title: "PADELTECH ישראל",
   description:
-    "נציגות הרשת העולמית PADELTECH בישראל.",
+    "תכנון, הקמה והפעלה של מתחמי פאדל לרשויות, ליזמים ולמפעילים.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png", sizes: "64x64" },

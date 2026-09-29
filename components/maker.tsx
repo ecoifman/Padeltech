@@ -123,8 +123,20 @@ export function MakerGuide({ t }: { t: Copy }) {
   return (
     <Section className="border-t border-border">
       <SectionHeader title={m.guideTitle} lead={m.guideLead} />
-      <div className="mt-10 overflow-x-auto">
-        <table className="w-full min-w-[720px] border-collapse text-start">
+      <ul className="mt-10 border-t border-foreground md:hidden">
+        {m.guide.map((row) => (
+          <li key={row.model} className="border-b border-border py-4">
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="type-h3"><bdi>{row.model}</bdi></h3>
+              <span className="type-small text-muted-foreground">{row.level}</span>
+            </div>
+            <p className="type-body mt-1">{row.use}</p>
+            <p className="type-small mt-1 text-muted-foreground">{row.feature}</p>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-10 hidden md:block">
+        <table className="w-full border-collapse text-start">
           <thead>
             <tr className="border-b border-foreground">
               <th scope="col" className="type-eyebrow py-3 pe-6 text-start font-medium">{m.guideHead.model}</th>

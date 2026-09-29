@@ -11,22 +11,11 @@ const nextConfig: NextConfig = {
     "*.cursorusercontent.com",
   ],
   async redirects() {
+    // Player pages were retired when the site became business-first.
+    const retired = "club|clubs|padel|wellness|groups|story|book|network|membership"
     return [
-      {
-        source: "/:locale(he|en)/club",
-        destination: "/:locale/padel",
-        permanent: false,
-      },
-      {
-        source: "/:locale(he|en)/network",
-        destination: "/:locale/clubs",
-        permanent: false,
-      },
-      {
-        source: "/:locale(he|en)/membership",
-        destination: "/:locale",
-        permanent: false,
-      },
+      { source: `/:locale(he|en)/:page(${retired})`, destination: "/:locale", permanent: true },
+      { source: "/:locale(he|en)/clubs/:id", destination: "/:locale", permanent: true },
     ]
   },
 }

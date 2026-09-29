@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils"
 
 /** Phone, WhatsApp and email links. Renders nothing until they are configured. */
 export function ContactChannels({ t, className }: { t: Copy; className?: string }) {
-  const c = contactChannels()
   const c2 = t.v2.contact
+  const c = contactChannels(c2.whatsappMessage)
   const items = [
     c.phone && { href: c.phoneHref, label: c2.phone, value: c.phone, Icon: Phone },
     c.phone && { href: c.whatsappHref, label: c2.whatsapp, value: c.phone, Icon: MessageCircle },

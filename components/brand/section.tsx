@@ -96,7 +96,7 @@ export function SimBadge({ label, className }: { label: string; className?: stri
   return (
     <span
       className={cn(
-        "type-caption pointer-events-none absolute bottom-3 start-3 text-paper/80 [text-shadow:0_1px_6px_rgb(0_0_0/0.5)]",
+        "type-caption pointer-events-none absolute bottom-3 start-3 bg-ink/70 px-2 py-1 text-paper",
         className
       )}
     >

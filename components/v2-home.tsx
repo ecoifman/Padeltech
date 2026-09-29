@@ -75,7 +75,7 @@ export function HomeDoors({ locale, t }: { locale: Locale; t: Copy }) {
                   src={doorImage[key].src}
                   alt=""
                   simLabel={`${t.v2.maker.countries[doorImage[key].country]} · ${t.v2.maker.projectCaption}`}
-                  className="aspect-[4/3] transition-opacity group-hover:opacity-90"
+                  className="aspect-[16/9] transition-opacity group-hover:opacity-90 md:aspect-[4/3]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="flex flex-1 flex-col gap-2 pt-6">
@@ -132,7 +132,7 @@ export function HomeProcess({ t }: { t: Copy }) {
           return (
             <li
               key={step.label}
-              className="border-t border-border py-8 lg:border-t-0 lg:border-s lg:px-6 lg:py-0 lg:first:border-s-0 lg:first:ps-0"
+              className="border-t border-border py-6 lg:border-t-0 lg:border-s lg:px-6 lg:py-0 lg:first:border-s-0 lg:first:ps-0"
             >
               <div className="flex items-start justify-between gap-4">
                 <span className="type-eyebrow type-number" dir="ltr">
@@ -140,7 +140,7 @@ export function HomeProcess({ t }: { t: Copy }) {
                 </span>
                 <Icon className="size-7 stroke-[1.25]" aria-hidden />
               </div>
-              <h3 className="type-h3 mt-8">{step.title}</h3>
+              <h3 className="type-h3 mt-4 lg:mt-8">{step.title}</h3>
               <p className="type-small mt-3 max-w-xs text-muted-foreground">{step.body}</p>
             </li>
           )
